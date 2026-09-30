@@ -1,0 +1,554 @@
+{
+ "i351": {
+  "zh": "卡格巴莱特岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Cagbalete"
+  ],
+  "intro": {
+   "zh": "卡格巴莱特岛位于吕宋岛东岸外的拉蒙湾，属奎松省毛班镇。岛上以绵长平缓的白沙滩、退潮时露出的大片沙坪和天然岩池闻名，没有大型开发，多是露营地和小型度假屋，适合想远离城市喧嚣的周末游客。",
+   "en": "Cagbalete is an island off the east coast of Luzon in Lamon Bay, part of Quezon province and administered by the municipality of Mauban. It is known for long, gently sloping white beaches, vast sand flats exposed at low tide and natural rock pools. With no large developments, only campsites and small cottages, it suits weekend visitors looking to escape the city."
+  },
+  "spots": [
+   [
+    "node/5421550427",
+    "天然岩池"
+   ],
+   [
+    "node/5421537624",
+    "沙滩"
+   ],
+   [
+    "Q31480956",
+    "巴利斯坎岛"
+   ]
+  ]
+ },
+ "i958": {
+  "zh": "霍蒙洪岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Homonhon"
+  ],
+  "intro": {
+   "zh": "霍蒙洪岛位于东萨马省、莱特湾东侧，长约 20 公里，属吉万镇，下辖八个村。它是东西方在太平洋最早接触的地点之一：1521 年麦哲伦船队曾在这座当时无人居住的岛上停泊。岛上立有登陆纪念碑，西北角外还有小岛曼托科南。",
+   "en": "Homonhon is an island of Eastern Samar on the east side of Leyte Gulf, about 20 kilometres long, belonging to the municipality of Guiuan and made up of eight barangays. It is one of the earliest contact sites between East and West in the Pacific: Magellan's expedition anchored at the then uninhabited island in 1521. A landing marker stands on the island, and the islet of Mantoconan lies off its northwest corner."
+  },
+  "spots": [
+   [
+    "node/8530493232",
+    "霍蒙洪登陆纪念碑"
+   ],
+   [
+    "Q31827507",
+    "蒙托科南岛"
+   ],
+   [
+    "Q31825723",
+    "胡安娜岛"
+   ],
+   [
+    "Q31536506",
+    "卡索戈兰湾"
+   ]
+  ],
+  "okNums": [
+   "1521"
+  ],
+  "okNote": "维基全文：1521 年 3 月 16 日登岛"
+ },
+ "i2408": {
+  "zh": "布里亚斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Burias_(island)"
+  ],
+  "intro": {
+   "zh": "布里亚斯岛是马斯巴特省三大岛之一，隔布里亚斯水道与比科尔半岛相望，另两座大岛是蒂考岛和马斯巴特岛。岛上只有克拉维里亚和圣帕斯夸尔两个镇，海湾众多、山丘起伏，外海的阿尼马索拉岛以奇岩闻名，是近年逐渐被发现的小众目的地。",
+   "en": "Burias Island is one of the three major islands of Masbate province, separated from the Bicol Peninsula by the Burias Pass; the other two are Ticao and Masbate. It has just two municipalities, Claveria and San Pascual. Many bays and rolling hills shape the island, and offshore Animasola Island is known for its rock formations, making Burias a quietly emerging destination."
+  },
+  "spots": [
+   [
+    "node/8780158371",
+    "圣帕斯夸尔灯塔"
+   ],
+   [
+    "way/950881710",
+    "圣帕斯夸尔·贝隆堂区教堂"
+   ],
+   [
+    "Q31476584",
+    "萨古鲁姆山"
+   ],
+   [
+    "node/11903351369",
+    "阿尼马索拉岛岩石区"
+   ]
+  ]
+ },
+ "i406": {
+  "zh": "卡拉延岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Calayan_Island"
+  ],
+  "intro": {
+   "zh": "卡拉延岛位于巴布延岛西南偏西约 39 公里，属吕宋海峡中的巴布延群岛，夹在阿帕里与巴丹群岛之间，比 40 公里外的富加岛更大。岛上独有一种不会飞的鸟——卡拉延秧鸡，2004 年才被确认为新物种。岛上有草坡、灯塔和清澈海湾。",
+   "en": "Calayan Island lies about 39 kilometres west-southwest of Babuyan Island and belongs to the Babuyan Islands in the Luzon Strait, between Aparri and Batanes; it is larger than Fuga Island, 40 kilometres away. The island is home to the Calayan rail, a flightless bird identified as a separate species in 2004 and found nowhere else. Grassy hills, a lighthouse and clear bays complete the scene."
+  },
+  "spots": [
+   [
+    "node/6113026804",
+    "班加安观景点"
+   ],
+   [
+    "node/4941505928",
+    "纳古敦甘灯塔"
+   ],
+   [
+    "node/332019036",
+    "卡拉延山"
+   ],
+   [
+    "Q31485265",
+    "巴努阿湾"
+   ]
+  ]
+ },
+ "i232": {
+  "zh": "锡科贡岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Sicogon"
+  ],
+  "intro": {
+   "zh": "锡科贡岛是伊洛伊洛省北部的度假岛，距班乃岛东北岸 9.95 公里，属卡尔斯镇，由三个村组成，2020 年人口 4,275 人，面积 11.6 平方公里。岛由阿亚拉置地等公司联合开发，经营三家高端酒店，可以跳岛去巨人群岛，也能皮划艇、桨板、浮潜和徒步。",
+   "en": "Sicogon is a resort island in northern Iloilo, 9.95 kilometres off the northeast coast of Panay, under the municipality of Carles. It has three barangays, 4,275 people as of 2020 and a land area of 11.6 square kilometres. Managed by a joint venture of Ayala Land, it runs three upscale hotels and offers island hopping to the Islas de Gigantes, kayaking, paddleboarding, snorkelling and hiking."
+  },
+  "spots": [
+   [
+    "node/10308883493",
+    "布阿亚海滩"
+   ],
+   [
+    "Q31510154",
+    "锡科贡山"
+   ],
+   [
+    "Q17125596",
+    "图马京岛"
+   ],
+   [
+    "Q31467547",
+    "皮巴克礁"
+   ]
+  ]
+ },
+ "i140": {
+  "zh": "巴布延岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Babuyan_Island"
+  ],
+  "intro": {
+   "zh": "巴布延岛又称巴布延克拉罗，是吕宋海峡中巴布延群岛里最高、最北的岛，隔巴士海峡与台湾遥遥相对。全岛构成卡加延省卡拉延镇的巴布延克拉罗村，2020 年人口 1,910 人。它是一座火山岛，岛上有巴布延克拉罗火山和史密斯火山。",
+   "en": "Babuyan Island, also called Babuyan Claro, is the highest and northernmost island of the Babuyan Islands in the Luzon Strait, facing Taiwan across the Bashi Channel. The whole island forms the barangay of Babuyan Claro in the municipality of Calayan, Cagayan, with 1,910 people in 2020. It is a volcanic island crowned by Babuyan Claro and Smith volcanoes."
+  },
+  "spots": [
+   [
+    "Q797800",
+    "巴布延克拉罗火山"
+   ],
+   [
+    "Q2295390",
+    "史密斯火山"
+   ],
+   [
+    "Q31443908",
+    "庞阿孙山"
+   ],
+   [
+    "Q31827883",
+    "潘德阿苏卡岛"
+   ]
+  ]
+ },
+ "i364": {
+  "zh": "马武利斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Mavulis_Island"
+  ],
+  "intro": {
+   "zh": "马武利斯岛又叫雅米岛，是巴丹群岛最北端、也是菲律宾国土最北端的岛。岛上无人定居，但有菲律宾武装部队驻守，建有渔民避难所、海水淡化设施、直升机坪、灯塔和号称全国最北的旗杆。最近的岛是南西南方 4 公里的米桑加岛，最近的有人岛伊特巴亚特在南方 38 公里。",
+   "en": "Mavulis Island, also called Y'ami, is the northernmost of the Batanes Islands and the northernmost island of the Philippines. It is uninhabited but garrisoned by the Armed Forces, which built a shelter for fishermen, a desalination plant, a helipad, a lighthouse and the country's northernmost flagpole. Misanga (North Island) lies 4 kilometres south-southwest, and the nearest inhabited island, Itbayat, is 38 kilometres south."
+  },
+  "spots": [
+   [
+    "node/320129691",
+    "雅米火山"
+   ],
+   [
+    "way/1026238218",
+    "雅米灯塔"
+   ],
+   [
+    "Q15944701",
+    "米桑加岛（北岛）"
+   ]
+  ]
+ },
+ "i1638": {
+  "zh": "大布卡斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Bucas_Grande"
+  ],
+  "intro": {
+   "zh": "大布卡斯岛属北苏里高省，与索科罗镇范围重合，面积 128 平方公里，2020 年人口 25,942 人，分 14 个村。名字在菲律宾西班牙语里意为“大开口”。岛上最出名的是索霍顿湾——穿过低矮洞口进入被石灰岩环抱的潟湖，还有无毒水母潟湖和海蚀洞。",
+   "en": "Bucas Grande is an island of Surigao del Norte that coincides with the municipality of Socorro, covering 128 square kilometres with 25,942 people in 2020 across 14 barangays. Its name means \"large mouth\" in Philippine Spanish. The island is best known for Sohoton Cove, a limestone-ringed lagoon entered through a low cave mouth, along with a lagoon of stingless jellyfish and sea caves."
+  },
+  "spots": [
+   [
+    "node/5651531623",
+    "索霍顿湾"
+   ],
+   [
+    "node/7501610249",
+    "索霍顿洞"
+   ],
+   [
+    "node/12578474701",
+    "水母潟湖"
+   ],
+   [
+    "node/4828537321",
+    "托霍曼潟湖"
+   ],
+   [
+    "node/4794687653",
+    "蒂克蒂坎潟湖"
+   ]
+  ]
+ },
+ "i1997": {
+  "zh": "锡利翁岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Silion"
+  ],
+  "intro": {
+   "zh": "锡利翁岛又称“处女岛”，当地也叫 Hilantagaan Diot 或 Pulo Diyot，是中米沙鄢宿务省圣菲镇外的一座小岛，靠近班塔延岛。岛边海水清浅、沙滩洁白，是从班塔延岛出发跳岛游的常见一站。",
+   "en": "Silion, also known as Virgin Island, Hilantagaan Diot or Pulo Diyot, is a small island in the municipality of Santa Fe in Central Visayas, close to Bantayan Island. Its clear shallow water and white sand make it a regular stop on island-hopping trips from Bantayan."
+  },
+  "spots": [
+   [
+    "Q6192651",
+    "希兰塔加安岛"
+   ],
+   [
+    "node/10853205106",
+    "巴利德比德潟湖海滩"
+   ],
+   [
+    "Q806973",
+    "班塔延岛"
+   ]
+  ]
+ },
+ "i4132": {
+  "zh": "帕西汉岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/San_Francisco,_Cebu"
+  ],
+  "intro": {
+   "zh": "帕西汉岛是宿务省卡莫特斯群岛的主岛之一，岛上的圣弗朗西斯科镇 2024 年人口 61,092 人。岛中央的达瑙湖是一片宁静的淡水湖，海岸有白沙滩和海蚀洞，还有可以跳水的天然洞穴水潭，与相邻的波罗岛有堤道相连。",
+   "en": "Pacijan is one of the main Camotes Islands of Cebu province; the municipality of San Francisco on it had 61,092 people in 2024. At the heart of the island lies Lake Danao, a calm freshwater lake, while its coast offers white beaches, sea caves and cave pools for swimming. A causeway links it to neighbouring Poro Island."
+  },
+  "spots": [
+   [
+    "Q1159269",
+    "达瑙湖（宿务）"
+   ],
+   [
+    "node/12688179001",
+    "曼戈德隆海滩"
+   ],
+   [
+    "node/5328929821",
+    "天堂洞"
+   ],
+   [
+    "node/12688230701",
+    "天国洞"
+   ],
+   [
+    "Q290699",
+    "图朗岛"
+   ]
+  ]
+ },
+ "i1610": {
+  "zh": "帕纳翁岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Panaon_Island"
+  ],
+  "intro": {
+   "zh": "帕纳翁岛是南莱特省的一座小岛，位于莱特岛以南，东隔苏里高海峡与迪纳加特和棉兰老相望，南北长约 30 公里。最大镇利洛安通过瓦瓦大桥与莱特本岛相连。潜水和观鲸鲨是这里的热门活动，2025 年周边海域被划为帕纳翁岛保护海景区。",
+   "en": "Panaon is a small island of Southern Leyte, south of Leyte and separated from Dinagat and Mindanao by the Surigao Strait; it is about 30 kilometres long. Its largest town, Liloan, is linked to Leyte by the Wawa Bridge. Scuba diving and whale shark watching are popular, and in 2025 the surrounding waters were declared the Panaon Island Protected Seascape."
+  },
+  "spots": [
+   [
+    "node/6284164386",
+    "纳潘陶海滩"
+   ],
+   [
+    "node/9523022953",
+    "伊利汉岛灯塔"
+   ],
+   [
+    "node/6965209385",
+    "布埃纳维斯塔观景点"
+   ],
+   [
+    "Q31809286",
+    "利洛安岩"
+   ]
+  ]
+ },
+ "i891": {
+  "zh": "希卢通甘岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Gilutongan_Island"
+  ],
+  "intro": {
+   "zh": "希卢通甘岛是奥兰戈岛群的一员，位于麦克坦岛与达纳洪礁之间，距科尔多瓦镇约 5 公里，归科尔多瓦管辖，人口 1,851 人。岛上有白沙滩和海洋保护区，可以浮潜和潜水，是宿务跳岛游的热门一站；附近的纳卢苏安岛也属同一个村。",
+   "en": "Gilutongan belongs to the Olango Island Group between Mactan and the Danajon Bank, about 5 kilometres from Cordova, which administers it; it has 1,851 residents. White beaches and a marine sanctuary for snorkelling and diving make it a popular stop on Cebu island-hopping tours, and nearby Nalusuan Island belongs to the same barangay."
+  },
+  "spots": [
+   [
+    "node/9865506520",
+    "希卢通甘海洋保护区"
+   ],
+   [
+    "node/10885499833",
+    "纳卢苏安岛"
+   ],
+   [
+    "Q31825533",
+    "希卢坦甘岛"
+   ],
+   [
+    "node/10215979916",
+    "300 米深潜墙"
+   ]
+  ]
+ },
+ "i1993": {
+  "zh": "帕劳伊岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Palaui_Island_Protected_Landscape_and_Seascape"
+  ],
+  "intro": {
+   "zh": "帕劳伊岛位于吕宋岛东北角外，属卡加延省圣安娜镇，全岛是“帕劳伊岛保护景观与海景区”国家公园。岛北端的恩加尼奥角立着西班牙时代的灯塔，草坡连绵、海蚀崖壮观，周边海域是珊瑚礁保护区，适合徒步和露营。",
+   "en": "Palaui Island lies off the northeastern tip of Luzon in Santa Ana, Cagayan, and the whole island is a national park, the Palaui Island Protected Landscape and Seascape. At its northern end, Cape Engaño is crowned by a Spanish-era lighthouse above rolling grassland and dramatic sea cliffs, and the surrounding reefs are protected, making it ideal for hiking and camping."
+  },
+  "spots": [
+   [
+    "Q2545092",
+    "恩加尼奥角"
+   ],
+   [
+    "Q5034767",
+    "恩加尼奥角灯塔"
+   ],
+   [
+    "node/2240723599",
+    "鳄鱼岛观景点"
+   ],
+   [
+    "Q31491726",
+    "罗博礁"
+   ]
+  ]
+ },
+ "i2685": {
+  "zh": "蒂纳加岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Tinaga_Island"
+  ],
+  "intro": {
+   "zh": "蒂纳加岛是北甘马粦省温松斯镇外卡拉瓜斯群岛的两大岛之一，长约八公里。岛上最出名的是一条叫“马哈邦布汉京”的长白沙滩，意为“长长的沙滩”，深受背包客和露营者喜爱；普华永道曾把它列为菲律宾十大潜力旅游地之首。",
+   "en": "Tinaga is one of the two major islands of the Calaguas Group off Vinzons, Camarines Norte, about eight kilometres long. It is famous for its long white beach, Mahabang Buhangin, literally \"long beach\", popular with backpackers and campers from Manila and elsewhere. PwC once ranked it first among the up-and-coming tourist destinations in its Philippine gems report."
+  },
+  "spots": [
+   [
+    "way/620230587",
+    "马哈邦布汉京长滩"
+   ],
+   [
+    "node/2852990957",
+    "马哈邦布汉京观景点"
+   ],
+   [
+    "node/2852990955",
+    "巴拉格巴格群岛观景点"
+   ],
+   [
+    "node/2853279200",
+    "卢克索"
+   ]
+  ]
+ },
+ "i7269": {
+  "zh": "波罗岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Poro_Island"
+  ],
+  "intro": {
+   "zh": "波罗岛位于宿务岛以东、莱特岛以西，是卡莫特斯群岛的四座岛之一，另三座是帕西汉、蓬松和图朗。岛上有波罗和图德拉两个镇，也是东西方在太平洋最早接触的地点之一。岛上溶洞众多，灯塔、海蚀岩和山丘构成主要风景。",
+   "en": "Poro Island lies east of Cebu and west of Leyte and is one of the four Camotes Islands, together with Pacijan, Ponson and Tulang. It holds two municipalities, Poro and Tudela, and is counted among the early Pacific contact sites between East and West. Limestone caves, a lighthouse, sea-carved rocks and hills are its main sights."
+  },
+  "spots": [
+   [
+    "Q47472366",
+    "波罗岛灯塔"
+   ],
+   [
+    "node/1287676502",
+    "布基拉特洞"
+   ],
+   [
+    "node/5328577121",
+    "坦古布洞"
+   ],
+   [
+    "node/679159712",
+    "布霍岩"
+   ],
+   [
+    "Q31471732",
+    "三峰山"
+   ]
+  ]
+ },
+ "i4141": {
+  "zh": "迪迪卡斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Didicas_Volcano"
+  ],
+  "intro": {
+   "zh": "迪迪卡斯岛是卡加延省的一座活火山岛，位于吕宋海峡、巴布延群岛中卡米金岛东北 22 公里。它原本是海底火山，1857 年首次露出海面，后来又沉没，1952 年再次冒出海面形成现在的小岛。岛上无人居住，只能乘船远观火山锥。",
+   "en": "Didicas is an active volcanic island of Cagayan province in the Luzon Strait, 22 kilometres northeast of Camiguin Island in the Babuyan group. A submarine volcano, it first broke the ocean surface in 1857 and re-emerged from the sea in 1952 to form today's island. It is uninhabited and can only be admired from a boat."
+  },
+  "spots": [
+   [
+    "node/6113070597",
+    "迪迪卡斯火山"
+   ]
+  ]
+ },
+ "i433": {
+  "zh": "萨卢阿格岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Saluag_Island"
+  ],
+  "intro": {
+   "zh": "萨卢阿格岛位于棉兰老穆斯林自治区的塔威塔威省，长 1.6 公里，属西布图镇，是菲律宾国土最南端的岛。岛上有灯塔，周边散布着西科兰岛等小岛和清真寺，居民以萨玛—巴瑶人为主，海上生活气息浓厚。",
+   "en": "Saluag Island lies in Tawi-Tawi province in Muslim Mindanao. It is 1.6 kilometres long, belongs to the municipality of Sibutu and is the southernmost island of the Philippines. A lighthouse stands on it, small islands such as Sicolan lie nearby, and its Sama-Bajau communities give it a strong seafaring character."
+  },
+  "spots": [
+   [
+    "node/7074229392",
+    "萨卢阿格灯塔"
+   ],
+   [
+    "Q31830788",
+    "西科兰岛"
+   ],
+   [
+    "Q31830782",
+    "西科兰卡洛岛"
+   ],
+   [
+    "Q31831147",
+    "坦杜奥瓦克岛"
+   ]
+  ]
+ },
+ "i3350": {
+  "zh": "阿拉巴特岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Alabat_Island"
+  ],
+  "intro": {
+   "zh": "阿拉巴特岛位于吕宋岛东南岸外的拉蒙湾，属奎松省，面积 192 平方公里，人口 41,822 人，分为佩雷斯、阿拉巴特和奎松三个镇。岛上有一道山脊，最高峰卡马贡山。最早的居民是尼格利陀人阿拉巴特阿格塔族，其语言濒临消失。西南岸有大片红树林和潮滩。",
+   "en": "Alabat Island lies in Lamon Bay off the east coast of southern Luzon, in Quezon province. It covers 192 square kilometres, has 41,822 people and is divided into Perez, Alabat and Quezon. A mountain ridge runs along it, topped by Mt. Camagong. Its first inhabitants were the Inagta Alabat, a Negrito people whose language is among the most endangered in the world, and its southwest shore is fringed by mangroves and mudflats."
+  },
+  "spots": [
+   [
+    "node/7082016954",
+    "阿拉巴特灯塔"
+   ],
+   [
+    "node/332020391",
+    "卡马贡山"
+   ],
+   [
+    "way/96160424",
+    "圣十字堂区教堂"
+   ],
+   [
+    "Q31468864",
+    "皮纳格巴扬湾"
+   ]
+  ]
+ },
+ "i354": {
+  "zh": "马林杜克岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Marinduque"
+  ],
+  "intro": {
+   "zh": "马林杜克是位于菲律宾西南他加禄大区的岛省，首府博阿克。它北临塔亚巴斯湾、南接锡布延海，西邻民都洛、北望奎松省邦多克半岛。部分“佛得岛水道”——被誉为世界海洋生物多样性中心——也在其海域。2013 年被评为全国最和平的省份，每年圣周的莫里奥内斯节历史悠久。",
+   "en": "Marinduque is an island province in the Southwestern Tagalog Region, with Boac as its capital. It lies between Tayabas Bay to the north and the Sibuyan Sea to the south, east of Mindoro and west of the Bondoc Peninsula. Part of the Verde Island Passage, regarded as a centre of marine biodiversity, lies in its waters. Ranked the country's most peaceful province in 2013, it is also home to one of the oldest religious festivals, the Holy Week Moriones."
+  },
+  "spots": [
+   [
+    "Q1148936",
+    "马林迪格山"
+   ],
+   [
+    "node/2505525021",
+    "菲律宾国家博物馆马林杜克分馆"
+   ],
+   [
+    "node/1598425628",
+    "卢尔德岩洞"
+   ],
+   [
+    "Q31462368",
+    "阿格皮桑岛"
+   ]
+  ]
+ },
+ "i359": {
+  "zh": "佛得岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Verde_Island"
+  ],
+  "intro": {
+   "zh": "佛得岛是一座火山岛，位于吕宋与民都洛之间的佛得岛水道。1988 年，一个欧洲援助项目用太阳能板等技术让岛上小村第一次通上电。此后菲律宾旅游局把这里列为国家海洋保护区之一，周边海域珊瑚与鱼类极其丰富，是潜水者心中的宝地。",
+   "en": "Verde Island is a volcanic island in the Verde Island Passage between Luzon and Mindoro. In 1988 a European project brought electricity to one of its small villages using solar panels and other technologies. The Philippine Tourism Authority has since declared it one of the country's marine reserves, and the surrounding waters, astonishingly rich in corals and fish, are a treasure for divers."
+  },
+  "spots": [
+   [
+    "node/1271040189",
+    "佛得岛灯塔"
+   ],
+   [
+    "node/320129702",
+    "佛得火山"
+   ],
+   [
+    "node/9861697170",
+    "毕奥神父朝圣地"
+   ],
+   [
+    "Q60775779",
+    "亚洲之母和平塔"
+   ]
+  ]
+ }
+}

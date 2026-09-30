@@ -1,0 +1,9 @@
+{
+  "name": "ph-islands-tools",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "geojson-vt": "^3.2.1",
+    "vt-pbf": "^3.1.3"
+  }
+}

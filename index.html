@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#cdeefa">
+<title>岛热 · 菲律宾海岛热度地图</title>
+<meta name="description" content="菲律宾 7,800 多座海岛的热度地图：点任意一座岛，看面积、所属省、热度来由，热门岛还有介绍、景点与照片。">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="map" data-testid="map"></div>
+
+<header class="glass bar" data-testid="searchbar">
+  <div class="brand"><img src="assets/icon.svg" alt=""><div><b id="brandName">岛热</b><span class="count" data-testid="count" id="count"></span></div></div>
+  <div class="field"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+    <input data-testid="search" id="q" type="search" autocomplete="off" spellcheck="false" placeholder="搜索海岛"></div>
+  <ul id="results" role="listbox"></ul>
+</header>
+
+<nav class="tools">
+  <button class="glass pill" id="topBtn" data-testid="top-toggle" aria-pressed="false"><span>🔥</span><span id="topBtnText">热度榜</span></button>
+  <button class="glass pill" id="lang" data-testid="lang">EN</button>
+  <button class="glass pill round" id="homeBtn" aria-label="全国"><svg viewBox="0 0 24 24"><path d="M4 11 12 4l8 7v9h-5v-6H9v6H4z"/></svg></button>
+</nav>
+
+<aside class="glass top" data-testid="top" id="top" hidden>
+  <h3 id="topTitle">热度榜 Top 100</h3>
+  <ol id="topList"></ol>
+</aside>
+
+<div class="glass legend" id="legend"><span id="legLow">冷门</span><i></i><span id="legHigh">热门</span></div>
+
+<section class="glass detail" data-testid="detail" id="detail" hidden aria-live="polite">
+  <div class="grab"></div>
+  <button class="x" data-testid="close" id="close" aria-label="关闭">×</button>
+  <div class="head">
+    <h2 data-testid="d-name" id="dName"></h2>
+    <div class="sub" id="dSub"></div>
+  </div>
+  <div id="photoBox"></div>
+  <div class="stats">
+    <div class="stat heat"><div class="lbl" id="lScore"></div><div data-testid="d-score" id="dScore"></div></div>
+    <div class="stat"><div class="lbl" id="lRank"></div><div data-testid="d-rank" id="dRank"></div></div>
+    <div class="stat"><div class="lbl" id="lArea"></div><div data-testid="d-area" id="dArea"></div></div>
+    <div class="stat"><div class="lbl" id="lProv"></div><div data-testid="d-prov" id="dProv"></div></div>
+  </div>
+  <div class="why" id="why"></div>
+  <div class="row" data-testid="d-pois" id="dPois"></div>
+  <div class="row" data-testid="d-near" id="dNear"></div>
+  <div id="rich"></div>
+</section>
+
+<footer class="credit-bar" id="credits"></footer>
+<script src="vendor/maplibre-gl.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,574 @@
+{
+ "i3": {
+  "zh": "帕米拉坎岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Pamilacan_Island"
+  ],
+  "intro": {
+   "zh": "帕米拉坎岛位于薄荷岛以南 12.5 公里的保和海上，是巴克拉永镇 17 个村之一，2015 年人口 1,418 人。岛民过去捕猎鲸、海豚和蝠鲼，如今转为经营观海豚、观鲸之旅和小型渔业。岛名可能意为“蝠鲼栖息地”，也可能来自鱼叉“pamilac”。岛东北有一座约 200 年历史的西班牙瞭望堡。",
+   "en": "Pamilacan is an island barangay 12.5 kilometres south of Bohol in the Bohol Sea, one of the 17 barangays of Baclayon, with 1,418 people in 2015. Islanders once hunted whales, dolphins and manta rays but now run dolphin- and whale-watching tours alongside small-scale fishing. The name may mean \"resting place of the mantas\" or come from pamilac, a harpoon. A 200-year-old Spanish watchtower fort stands on its northeast side."
+  },
+  "spots": [
+   [
+    "node/7100552171",
+    "帕米拉坎灯塔"
+   ],
+   [
+    "way/983805154",
+    "塞尔韦拉浅滩"
+   ]
+  ]
+ },
+ "i144": {
+  "zh": "大圣克鲁斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Great_Santa_Cruz_Island"
+  ],
+  "intro": {
+   "zh": "大圣克鲁斯岛是三宝颜市南面巴西兰海峡中的一座有人小岛，距市中心 4 公里，以粉红色珊瑚沙滩闻名：沙子里混着被海浪磨碎的红色管珊瑚。它是世界上少数几处粉红沙滩之一，2017 年被《国家地理》评为全球 21 个最佳海滩之一。",
+   "en": "Great Santa Cruz Island is a small inhabited island in the Basilan Strait, 4 kilometres south of downtown Zamboanga City, famous for its pink coralline sand, coloured by red organ-pipe coral ground down by the surf and mixed with white sand. It is one of a handful of pink sand beaches in the world, and in 2017 National Geographic named it one of the 21 Best Beaches in the World."
+  },
+  "spots": [
+   [
+    "way/664061639",
+    "大圣克鲁斯岛粉红沙滩"
+   ],
+   [
+    "Q6651854",
+    "小圣克鲁斯岛"
+   ],
+   [
+    "node/6189581900",
+    "小圣克鲁斯灯塔"
+   ],
+   [
+    "Q1438657",
+    "皮拉尔堡"
+   ],
+   [
+    "way/849990745",
+    "滨海大道"
+   ]
+  ]
+ },
+ "i7212": {
+  "zh": "苏卢安岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Suluan"
+  ],
+  "intro": {
+   "zh": "苏卢安岛是东萨马省吉万镇的一个海岛村，位于莱特湾以东、埃姆登海渊以西。1521 年 3 月 16 日麦哲伦船队停泊在附近当时无人居住的霍蒙洪岛，苏卢安岛民成为最早与船队交易、接触的菲律宾人。岛上立有五百周年历史纪念碑，还有灯塔和小教堂。",
+   "en": "Suluan is an island barangay of Guiuan in Eastern Samar, east of Leyte Gulf and west of the Emden Deep. When Magellan's expedition anchored at nearby, then uninhabited Homonhon on March 16, 1521, Suluan's inhabitants became the first Filipinos to trade and interact with it. A quincentennial historical marker, a lighthouse and a small chapel stand on the island."
+  },
+  "spots": [
+   [
+    "Q105974004",
+    "苏卢安五百周年历史纪念碑"
+   ],
+   [
+    "node/1271040949",
+    "苏卢安灯塔"
+   ],
+   [
+    "way/247804619",
+    "苏卢安小教堂"
+   ],
+   [
+    "node/302226885",
+    "尖礁"
+   ]
+  ]
+ },
+ "i834": {
+  "zh": "达卢皮里岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Dalupiri_Island_(Cagayan)"
+  ],
+  "intro": {
+   "zh": "达卢皮里岛位于吕宋岛以北吕宋海峡中的巴布延群岛，全岛构成卡加延省卡拉延镇的达卢皮里村，2020 年人口 621 人（2010 年为 611 人），可从阿帕里港乘船前往。岛上有火山地貌和巴努阿湾的海滩，游客极少。",
+   "en": "Dalupiri Island lies in the Babuyan Islands in the Luzon Strait north of Luzon. The whole island makes up the barangay of Dalupiri in Calayan, Cagayan, which had 621 inhabitants in 2020, up from 611 in 2010, and it can be reached by boat from the Port of Aparri. Volcanic landforms and the beach at Banua Bay see very few visitors."
+  },
+  "spots": [
+   [
+    "node/319478125",
+    "达卢皮里火山"
+   ],
+   [
+    "Q31485306",
+    "巴努阿海滩"
+   ],
+   [
+    "Q31485245",
+    "巴努阿湾"
+   ],
+   [
+    "Q31825637",
+    "伊拉奥岛"
+   ]
+  ]
+ },
+ "i7599": {
+  "zh": "库约岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Cuyo_Archipelago"
+  ],
+  "intro": {
+   "zh": "库约岛是库约群岛的中心和最大岛，群岛约有 45 座岛，位于巴拉望本岛东北、民都洛以南、班乃以西。库约岛是火山岛，面积约 57 平方公里、长约 14 公里。岛上的库约镇历史悠久，有西班牙时代的库约堡，附近海域散布着许多珊瑚岛。",
+   "en": "Cuyo Island is the largest island and centre of the Cuyo Archipelago, a group of about 45 islands northeast of Palawan, south of Mindoro and west of Panay. The volcanic island covers about 57 square kilometres and is about 14 kilometres long. Its old town of Cuyo is home to the Spanish-era Fort Cuyo, and many coral islands dot the surrounding sea."
+  },
+  "spots": [
+   [
+    "Q54997374",
+    "库约堡"
+   ],
+   [
+    "node/5269553322",
+    "植物园"
+   ],
+   [
+    "Q30475440",
+    "邦邦山"
+   ],
+   [
+    "Q18417279",
+    "比苏凯岛"
+   ],
+   [
+    "Q31502641",
+    "圣卡洛斯湾"
+   ]
+  ]
+ },
+ "i612": {
+  "zh": "福琼岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Fortune_Island_(Philippines)"
+  ],
+  "intro": {
+   "zh": "福琼岛是八打雁省的一座度假岛，面积 27 公顷，距纳苏格布海岸约 14 公里。岛上最出名的是模仿希腊神庙的白色柱廊遗迹，站在崖顶俯瞰蔚蓝海水格外上镜；岛边还有灯塔和适合浮潜的清澈海湾。",
+   "en": "Fortune Island is a resort island of Batangas province, 27 hectares in size and about 14 kilometres off the coast of Nasugbu. It is best known for its white Greek-style colonnade ruins perched on a cliff above the blue sea, a favourite photo spot, and it also has a lighthouse and clear coves for snorkelling."
+  },
+  "spots": [
+   [
+    "node/1271040235",
+    "福琼岛灯塔"
+   ],
+   [
+    "node/6262873944",
+    "福琼岛希腊柱廊"
+   ]
+  ]
+ },
+ "i877": {
+  "zh": "卡波内斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Capones_Island"
+  ],
+  "intro": {
+   "zh": "卡波内斯岛又名大卡蓬岛，长约 1.9 公里、最宽处约 0.4 公里，位于吕宋岛西岸三描礼士省外 3.8 公里，是卡波内斯群岛三座小岛中最大的一座。岛上遍布巨石和陡崖，四周是白沙和珊瑚滩，西端山坡上有卡波内斯岛灯塔，属圣安东尼奥镇蓬达基特村。",
+   "en": "Capones Island, also called Grand Capon, is about 1.9 kilometres long and 0.4 kilometres wide, lying 3.8 kilometres off the coast of Zambales on western Luzon. It is the largest of the three Capones Islands and belongs to barangay Pundaquit in San Antonio. Huge rock formations and steep cliffs rise above white sand and coral beaches, and the Capones Island Lighthouse stands on the hillside near its western end."
+  },
+  "spots": [
+   [
+    "Q5036092",
+    "卡波内斯岛灯塔"
+   ],
+   [
+    "Q31529950",
+    "卡马拉岛"
+   ],
+   [
+    "relation/2412446",
+    "蓬达基特海滩"
+   ],
+   [
+    "way/1169896996",
+    "阿格奈姆湾"
+   ]
+  ]
+ },
+ "i342": {
+  "zh": "卡瓦略岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Caballo_Island"
+  ],
+  "intro": {
+   "zh": "卡瓦略岛（西班牙语意为“马岛”）是马尼拉湾入口处一座陡峭多岩的小岛，长约 1.2 公里，最高处 381 英尺。它和北面 2 公里外更大的科雷希多岛一起，把湾口分成南北两条深水航道。二战前全岛是美军的休斯堡要塞，战时遭到猛烈轰炸。",
+   "en": "Caballo Island, \"Horse Island\" in Spanish, is a bluff, rocky island at the entrance to Manila Bay, about 1.2 kilometres long and 381 feet high at its summit. Together with the larger Corregidor 2 kilometres to the north, it divides the mouth of the bay into the North and South channels. Before World War II the whole island was occupied by Fort Hughes, a US fortification that was heavily bombed during the war."
+  },
+  "spots": [
+   [
+    "Q5471375",
+    "休斯堡"
+   ],
+   [
+    "Q31522659",
+    "卡瓦略湾"
+   ],
+   [
+    "Q928075",
+    "科雷希多岛"
+   ],
+   [
+    "Q600734",
+    "埃尔弗赖莱岛"
+   ]
+  ]
+ },
+ "i5924": {
+  "zh": "班顿岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Banton,_Romblon"
+  ],
+  "intro": {
+   "zh": "班顿岛位于锡布延海北部、马林杜克南端附近，全岛构成朗布隆省班顿镇，2024 年人口 5,848 人，居民说班顿语（又称阿西语）。1936 年国家博物馆在岛上的古扬岸洞穴发现了棺木和古老裹尸布等文物，证明殖民前已有人居住。现今聚落建于 1622 年，是全省最古老的聚落，还有西班牙时代的圣何塞要塞。",
+   "en": "Banton Island lies in the northern Sibuyan Sea near the southern tip of Marinduque; the whole island forms the municipality of Banton in Romblon, with 5,848 people in 2024 who speak Bantoanon, or Asi. Coffins, an ancient burial cloth and other finds from the Guyangan Cave System, excavated by the National Museum in 1936, show pre-colonial settlement. The present town, founded in 1622, is the oldest settlement in the province and keeps the Spanish-era Fuerza de San José."
+  },
+  "spots": [
+   [
+    "Q122851621",
+    "圣何塞要塞"
+   ],
+   [
+    "way/693686236",
+    "阿西文化艺术研究中心"
+   ],
+   [
+    "node/12141359327",
+    "皮亚帕格观景台"
+   ],
+   [
+    "node/6092558599",
+    "戈托角观景点"
+   ],
+   [
+    "Q31813278",
+    "马伊尼特湾"
+   ]
+  ]
+ },
+ "i2513": {
+  "zh": "纳布罗特岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Naburot_Island"
+  ],
+  "intro": {
+   "zh": "纳布罗特岛位于吉马拉斯省霍丹镇辛纳普萨潘村，面积约 39,500 平方米，从新巴伦西亚镇的阿卢比霍德海滩就能望见。小岛被开发成简朴的海岛度假地，周边还有三岛海滩、灯塔和小海湾，是吉马拉斯跳岛游常见的一站。",
+   "en": "Naburot Island lies in barangay Sinapsapan, Jordan, Guimaras, and covers around 39,500 square metres; it can be seen from Alubihod Beach in Nueva Valencia. The islet has been turned into a rustic island retreat, and nearby beaches, a lighthouse and small coves make it a regular stop on Guimaras island-hopping trips."
+  },
+  "spots": [
+   [
+    "node/3919706817",
+    "纳布罗特岛度假地"
+   ],
+   [
+    "node/6369354040",
+    "纳塔戈海滩"
+   ],
+   [
+    "relation/13997432",
+    "三岛海滩"
+   ],
+   [
+    "node/4339009900",
+    "辛纳普萨潘灯塔"
+   ],
+   [
+    "Q23048101",
+    "圣母玛利亚岛"
+   ]
+  ],
+  "okNums": [
+   "39500"
+  ],
+  "okNote": "原文写作 39.500 square meters（欧式千分位）"
+ },
+ "i1766": {
+  "zh": "潘德阿苏卡岛（糖面包岛）",
+  "src": [
+   "https://en.wikipedia.org/wiki/Pan_de_Azucar_Island_(Iloilo)"
+  ],
+  "intro": {
+   "zh": "潘德阿苏卡岛又名坦皮绍岛或坦巴利萨岛，是米沙鄢海上的一座有人岛，以陡峭的火山锥潘德阿苏卡山（糖面包山）闻名，是吉马拉斯海峡北口的显著地标。岛属伊洛伊洛省康塞普西翁镇，是该镇 16 座离岛中最大的，约占全镇陆地面积 19%，2015 年人口 7,502 人。",
+   "en": "Pan de Azucar, also known as Tampisaw or Tambaliza Island, is a populated island in the Visayan Sea, known for Mount Pan de Azucar, the steep volcanic Sugarloaf Mountain that serves as a landmark at the northern entrance of the Guimaras Strait. It belongs to Concepcion, Iloilo, and is the largest of the town's 16 outlying islands, making up nearly 19 percent of its land area, with 7,502 people in 2015."
+  },
+  "spots": [
+   [
+    "node/320129597",
+    "潘德阿苏卡山"
+   ],
+   [
+    "Q2388163",
+    "塔戈岛"
+   ],
+   [
+    "Q18359182",
+    "博特洛格岛"
+   ],
+   [
+    "Q31544824",
+    "坦巴利萨湾"
+   ]
+  ]
+ },
+ "i2": {
+  "zh": "阿利瓜伊岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Aliguay"
+  ],
+  "intro": {
+   "zh": "阿利瓜伊岛是达皮丹市的一个村，全岛是已设立的海洋保护区，四周环绕着白沙滩和珊瑚礁。岛上没有淡水水源，只有少数居民，多以向游客卖鱼为生。这里是三宝颜北部潜水、浮潜和一日游的热门去处。",
+   "en": "Aliguay is an island and barangay of Dapitan and an established marine sanctuary, ringed by white sand beaches and coral reefs. There are no water sources on the island, and its few residents mostly sell fish to tourists. It is a popular spot for diving, snorkelling and day trips in Zamboanga del Norte."
+  },
+  "spots": [
+   [
+    "Q1431159",
+    "阿利瓜伊岛保护景观与海景区"
+   ],
+   [
+    "Q31464150",
+    "阿利瓜伊岛海滩"
+   ],
+   [
+    "Q31464160",
+    "阿利瓜伊岛游客海滩"
+   ],
+   [
+    "Q31541145",
+    "挑战者礁"
+   ]
+  ]
+ },
+ "i318": {
+  "zh": "桑加特岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Sangat_Island"
+  ],
+  "intro": {
+   "zh": "桑加特岛是巴拉望省卡拉棉群岛北部的一座小岛，距布桑加岛海岸 2 公里、靠近科隆镇宾图安村。岛上大部分已开发为有小屋和独立别墅的度假村，常有潜水者来此探访二战时沉没在卡拉棉群岛一带的日本沉船。",
+   "en": "Sangat Island is a tiny island in the northern Calamian Islands of Palawan, 2 kilometres off the coast of Busuanga near Barangay Bintuan in Coron. Much of it has been turned into a resort with cottages and private villas, frequented by scuba divers who come to explore the Japanese shipwrecks sunk around the Calamian Islands in World War II."
+  },
+  "spots": [
+   [
+    "node/3290535667",
+    "桑加特岛温泉"
+   ],
+   [
+    "node/663871191",
+    "照风丸沉船潜点"
+   ],
+   [
+    "node/663871194",
+    "奥林匹亚丸沉船潜点"
+   ],
+   [
+    "node/5733374030",
+    "马拉礁"
+   ],
+   [
+    "Q31527797",
+    "卡尔比岛"
+   ]
+  ]
+ },
+ "i3457": {
+  "zh": "阿利比哈班岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Alibijaban"
+  ],
+  "intro": {
+   "zh": "阿利比哈班岛是吕宋岛邦多克半岛东南岸外、拉盖湾中的一个海岛村，属奎松省圣安德烈斯镇，2020 年人口 1,738 人。岛上以原始红树林、珊瑚礁、白沙滩和丰富的鸟类闻名，受国家保护区体系保护，保护范围达 1,056 公顷，周边 225 公顷海域为鱼类保护区。",
+   "en": "Alibijaban is an island barangay in Ragay Gulf off the southeastern coast of the Bondoc Peninsula, part of San Andres in Quezon province, with 1,738 people in 2020. It is known for pristine mangrove forest, coral reefs, white sandy beaches and rich birdlife, protected as a landscape and seascape of 1,056 hectares, with 225 hectares of surrounding water declared a fish sanctuary."
+  },
+  "spots": [
+   [
+    "Q970577",
+    "阿利比哈班保护区"
+   ],
+   [
+    "way/618052030",
+    "圣安德烈堂区教堂"
+   ],
+   [
+    "node/332019535",
+    "圣安德烈斯山"
+   ]
+  ]
+ },
+ "i4647": {
+  "zh": "潘关岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Panguan_Island"
+  ],
+  "intro": {
+   "zh": "潘关岛位于塔威塔威省锡唐凯镇，面积 0.06 平方公里，当地又叫 Malamanok——萨玛-巴瑶语意为“吃鸡”，因为前往沙巴的当地人常在此停下吃烤鸡。它是苏禄群岛中最靠近菲马边界的岛，距沙巴 50 公里，岛上有新建的军营、旗杆和一个小小的巴瑶族社区。",
+   "en": "Panguan Island lies in Sitangkai, Tawi-Tawi, and covers 0.06 square kilometres. It is also called Malamanok, \"eat chicken\" in Sama-Bajau, because locals travelling to Sabah stop here for roasted chicken. The last island of the Sulu Archipelago before the Malaysian border, 50 kilometres from Sabah, it has a new military barrack, a flagpole and a small Badjao community."
+  },
+  "spots": [
+   [
+    "relation/7294637",
+    "潘关礁"
+   ],
+   [
+    "Q31464049",
+    "爱丽丝礁"
+   ],
+   [
+    "Q31476849",
+    "巴哈帕礁"
+   ]
+  ]
+ },
+ "i1975": {
+  "zh": "白岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/White_Island_(Philippines)"
+  ],
+  "intro": {
+   "zh": "白岛是卡米金岛曼巴豪北岸外约 1.4 公里的一座无人白沙洲，大致呈马蹄形，形状随潮汐不断变化。岛上没有树木，也没有任何遮蔽，只有一片纯白的沙；从沙洲上可以回望卡米金的希博克-希博克火山，是卡米金最受欢迎的景点之一。",
+   "en": "White Island is an uninhabited white sandbar about 1.4 kilometres off the northern shore of Mambajao on the volcanic island of Camiguin. Roughly horseshoe-shaped, it is constantly resized and reshaped by the tides. There are no trees or shelter of any kind, only pure white sand, and from it visitors look back at Camiguin's Mount Hibok-Hibok, making it one of the island's most popular sights."
+  },
+  "spots": [
+   [
+    "Q31827443",
+    "梅达诺小岛"
+   ],
+   [
+    "node/2180140875",
+    "白岛观景点"
+   ],
+   [
+    "Q1319819",
+    "希博克-希博克火山"
+   ],
+   [
+    "way/25951941",
+    "沉没墓地"
+   ]
+  ]
+ },
+ "i746": {
+  "zh": "卡尼高岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Canigao_Island"
+  ],
+  "intro": {
+   "zh": "卡尼高岛是莱特省马塔隆镇外的一座小岛，周边渔场丰饶，珊瑚礁景色优美，适合潜水。岛上有灯塔和白沙滩，附近海域散布着以亚当、夏娃、该隐、亚伯命名的几处暗礁。",
+   "en": "Canigao is an islet off Matalom, Leyte, known for abundant fishing grounds and scenic coral reefs suitable for diving. It has a lighthouse and a white beach, and the nearby sea is scattered with reefs named after Adam, Eve, Cain and Abel."
+  },
+  "spots": [
+   [
+    "node/3392638201",
+    "卡尼高灯塔"
+   ],
+   [
+    "relation/4662401",
+    "卡尼高海滩"
+   ],
+   [
+    "Q31526013",
+    "该隐礁"
+   ],
+   [
+    "Q31579925",
+    "夏娃礁"
+   ],
+   [
+    "node/9453972476",
+    "亚当礁灯塔"
+   ]
+  ]
+ },
+ "i3437": {
+  "zh": "佩斯卡多尔岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Pescador_Island"
+  ],
+  "intro": {
+   "zh": "佩斯卡多尔岛当地叫 Agad-Agad，是塔尼翁海峡中的一座石灰岩小岛，离宿务岛西岸几公里，属莫阿尔博阿尔镇。岛名来自西班牙语“渔夫”，源于周边珊瑚礁鱼群丰富。岛周水下 5–10 米是覆盖软珊瑚的沙坡，之后是直落约 40 米的硬珊瑚墙，西侧还有被称为“大教堂”的开口水下洞穴。",
+   "en": "Pescador Island, locally called Agad-Agad, is a small limestone island in the Tañon Strait a few kilometres off the west coast of Cebu, under Moalboal. Its name means \"fisherman\" in Spanish, after the abundant fish on its reef. Underwater, a sandy slope of soft coral at 5–10 metres gives way to a wall of hard coral dropping to about 40 metres, and on the west side lies an open-top cave known as the Cathedral."
+  },
+  "spots": [
+   [
+    "Q42306949",
+    "佩斯卡多尔岛灯塔"
+   ],
+   [
+    "node/9968798519",
+    "莫阿尔博阿尔沙丁鱼风暴潜点"
+   ],
+   [
+    "way/1379629623",
+    "潘纳格萨马海滩"
+   ],
+   [
+    "node/6461173985",
+    "海龟潜点"
+   ],
+   [
+    "Q31474366",
+    "巴迪安岛"
+   ]
+  ]
+ },
+ "i4463": {
+  "zh": "布格苏克岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Bugsuk"
+  ],
+  "intro": {
+   "zh": "布格苏克岛是巴拉望省巴拉巴克镇的一座岛，面积约 119 平方公里，位于巴拉望最南端的群岛之中。周边散布着潘达南岛、加邦岛等小岛和多条白沙洲，海水清澈、人迹罕至，是巴拉望南部的原始海岛风景。",
+   "en": "Bugsuk is an island of Balabac municipality in Palawan, covering 119 square kilometres among the islands at the southern tip of Palawan. Islets such as Pandanan and Gabung and several white sandbars dot the clear, little-visited waters around it, offering the untouched island scenery of southern Palawan."
+  },
+  "spots": [
+   [
+    "relation/6805027",
+    "塞巴林角海滩"
+   ],
+   [
+    "way/506663024",
+    "海伦女王沙洲"
+   ],
+   [
+    "node/6198709485",
+    "博比岛观景点"
+   ],
+   [
+    "Q18862699",
+    "潘达南岛"
+   ],
+   [
+    "Q19250252",
+    "加邦岛"
+   ]
+  ]
+ },
+ "i506": {
+  "zh": "迪奥戈岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Diogo_Island"
+  ],
+  "intro": {
+   "zh": "迪奥戈岛当地叫 Di'nem 岛，是巴丹群岛省一座无人居住的火山岛。它是一块孤零零耸出海面的巨岩，四面都是陡峭悬崖，海流湍急，几乎无法登岸。这是一座已被海浪严重侵蚀的死火山，只能从伊特巴亚特岛远眺。",
+   "en": "Diogo Island, known locally as Di'nem Island, is an uninhabited volcanic island in Batanes, the northernmost province of the Philippines. A lone rock rising out of the sea with steep cliffs on every side, it is practically impossible to land on because of dangerous currents. It is an extinct volcano heavily eroded by the sea and is best viewed from Itbayat."
+  },
+  "spots": [
+   [
+    "node/319588338",
+    "迪奥戈火山"
+   ],
+   [
+    "node/5076567825",
+    "拉庞悬崖"
+   ],
+   [
+    "node/5076557123",
+    "托龙甘洞"
+   ],
+   [
+    "Q30467801",
+    "里波塞特山"
+   ]
+  ]
+ }
+}

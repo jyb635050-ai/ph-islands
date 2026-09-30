@@ -1,0 +1,598 @@
+{
+ "i885": {
+  "zh": "丹胡甘岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Danjugan_Island"
+  ],
+  "intro": {
+   "zh": "丹胡甘岛是西内格罗斯省考阿延镇辖下一座 43 公顷的小岛，由“菲律宾珊瑚礁与雨林保护基金会”负责管护，以生态旅游推广生物多样性保护。岛上保留着原生林、潟湖和珊瑚礁，游客只能参加小规模的自然导览，在观景点看日落、在保护区浮潜。",
+   "en": "Danjugan Island is a 43-hectare island under the jurisdiction of Cauayan, Negros Occidental. It is cared for by the Philippine Reef and Rainforest Conservation Foundation, which uses ecotourism to promote awareness of biodiversity protection. The island keeps its native forest, lagoons and coral reefs, and visitors come on small guided nature trips to watch sunsets from its viewpoints and snorkel in the protected waters."
+  },
+  "spots": [
+   [
+    "node/5683695221",
+    "鹰巢观景点"
+   ],
+   [
+    "node/5686427508",
+    "日落观景台"
+   ],
+   [
+    "way/510586579",
+    "海洋学习中心"
+   ],
+   [
+    "Q31462610",
+    "阿古塔扬岛"
+   ]
+  ]
+ },
+ "i2245": {
+  "zh": "布桑加岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Busuanga_Island"
+  ],
+  "intro": {
+   "zh": "布桑加岛是巴拉望省卡拉棉群岛中最大的岛，也是全省仅次于巴拉望本岛的第二大岛，位于民都洛和巴拉望之间。西三分之一属布桑加镇，东三分之二属科隆镇。1944 年 9 月 24 日美军在科隆湾击沉多艘日本船，这些二战沉船让这里成为世界知名的沉船潜水地。",
+   "en": "Busuanga is the largest island of the Calamian Group and the second-largest in Palawan province, lying halfway between Mindoro and Palawan. Its western third belongs to the municipality of Busuanga and the rest to Coron. On September 24, 1944, American aircraft sank a fleet of Japanese ships in Coron Bay, and those World War II wrecks have made the area a world-famous wreck-diving destination."
+  },
+  "spots": [
+   [
+    "Q1026285",
+    "卡拉维特野生动物园"
+   ],
+   [
+    "node/188157494",
+    "马基尼特温泉"
+   ],
+   [
+    "node/188124904",
+    "塔皮亚斯山"
+   ],
+   [
+    "node/663871192",
+    "兴业丸沉船潜点"
+   ],
+   [
+    "node/663871194",
+    "奥林匹亚丸沉船潜点"
+   ]
+  ]
+ },
+ "i5333": {
+  "zh": "霍洛岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Jolo"
+  ],
+  "intro": {
+   "zh": "霍洛岛是菲律宾西南部的一座火山岛，苏禄省的主岛，省会霍洛就在岛上。它位于婆罗洲与棉兰老岛之间的苏禄群岛，人口约 500,000 人。岛上分布着霍洛火山群的众多火山锥和火山口，其中包括活火山达霍山；当地以陶苏格人的伊斯兰文化为特色。",
+   "en": "Jolo is a volcanic island in the southwest Philippines and the main island of Sulu province, whose capital shares its name. Lying in the Sulu Archipelago between Borneo and Mindanao, it has about 500,000 people. The island is dotted with the cones and craters of the Jolo Group of Volcanoes, including the active Bud Dajo, and its culture is shaped by the Muslim Tausug people."
+  },
+  "spots": [
+   [
+    "Q3707308",
+    "达霍山"
+   ],
+   [
+    "Q19862465",
+    "达霍山国家公园"
+   ],
+   [
+    "node/12599998801",
+    "坦杜海滩"
+   ],
+   [
+    "way/316772501",
+    "菲律宾国家博物馆苏禄分馆"
+   ]
+  ]
+ },
+ "i7294": {
+  "zh": "锡布延岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Sibuyan_Island"
+  ],
+  "intro": {
+   "zh": "锡布延岛是一座新月形的岛，位于同名的锡布延海，是朗布隆省第二大岛，面积 445 平方公里，2020 年人口 62,815 人。最高峰贵亭山海拔 2,058 米，山脊如锯齿。由于从未与其他陆地相连，这里物种独特，被科学家称为“亚洲的加拉帕戈斯”，山林、瀑布和河流保存完好。",
+   "en": "Sibuyan is a crescent-shaped island in the Sibuyan Sea and the second-largest of Romblon province, covering 445 square kilometres with 62,815 people in 2020. Its highest peak, the saw-toothed Mount Guiting-Guiting, rises to 2,058 metres. Never connected to any other land, the island has evolved a unique flora and fauna, earning it the nickname \"the Galápagos of Asia\", with forests, waterfalls and rivers still intact."
+  },
+  "spots": [
+   [
+    "Q389889",
+    "贵亭山"
+   ],
+   [
+    "Q31847015",
+    "贵亭山自然公园"
+   ],
+   [
+    "node/1758521113",
+    "兰宾甘瀑布"
+   ],
+   [
+    "node/1758592907",
+    "帕瓦拉河天然泳池"
+   ],
+   [
+    "Q1354869",
+    "奈洛格山"
+   ]
+  ]
+ },
+ "i7328": {
+  "zh": "马斯巴特岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Masbate_Island"
+  ],
+  "intro": {
+   "zh": "马斯巴特岛是马斯巴特省三大岛中最大的一个，另两个是蒂考岛和布里亚斯岛。按面积和人口都排全国第 11 位，下辖 14 个镇和 1 个市，2024 年人口 732,518 人，马斯巴特市是最大城镇。这里以牧牛业和牛仔节闻名，海岸有灯塔、沙洲和红树林步道。",
+   "en": "Masbate Island is the largest of the three major islands of Masbate province, alongside Ticao and Burias. It ranks 11th in the Philippines in both area and population, with 14 municipalities and 1 city and 732,518 people in 2024; Masbate City is its largest settlement. The island is known for cattle ranching, and its coast offers a historic lighthouse, sandbars and mangrove walkways."
+  },
+  "spots": [
+   [
+    "Q4986274",
+    "布吉角灯塔"
+   ],
+   [
+    "Q25052383",
+    "卡拉奈洞穴"
+   ],
+   [
+    "node/5215170024",
+    "波尔塔维加海滩"
+   ],
+   [
+    "node/4703436494",
+    "红树林步道"
+   ]
+  ]
+ },
+ "i5808": {
+  "zh": "科隆岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Coron_Island"
+  ],
+  "intro": {
+   "zh": "科隆岛是巴拉望北部卡拉棉群岛中第三大的岛，位于马尼拉西南约 310 公里，以周边的二战日本沉船闻名。岛上石灰岩峭壁环抱着清澈的湖泊与潟湖，整个区域受多项法令保护；它也是原住民塔格巴努亚人的祖传领地，1998 年 6 月 5 日获正式认定，岛上分为两个村。",
+   "en": "Coron is the third-largest island of the Calamian Islands in northern Palawan, about 310 kilometres southwest of Manila, and is known for the Japanese shipwrecks of World War II around it. Its limestone cliffs enclose clear lakes and lagoons, and the whole area is protected by several proclamations. The island is the ancestral domain of the indigenous Tagbanwa people, recognised on June 5, 1998, and comprises two barangays."
+  },
+  "spots": [
+   [
+    "Q125206346",
+    "卡扬安湖"
+   ],
+   [
+    "node/3280588687",
+    "双子潟湖"
+   ],
+   [
+    "relation/9587359",
+    "巴诺尔海滩"
+   ],
+   [
+    "node/5117162521",
+    "大教堂洞"
+   ],
+   [
+    "node/3280588688",
+    "双峰"
+   ]
+  ]
+ },
+ "i854": {
+  "zh": "薄荷岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Bohol"
+  ],
+  "intro": {
+   "zh": "薄荷省由薄荷岛和周围 75 个小岛组成，位于中米沙鄢，首府塔比拉兰。薄荷岛陆地面积 4,821 平方公里、海岸线长 261 公里，是全国第十大岛。最著名的景点是巧克力山——成片褐色的石灰岩圆丘；此外还有洛博克河游船、眼镜猴和古老的石头教堂，西南的邦劳岛则以潜水出名。",
+   "en": "Bohol province consists of the island itself and 75 minor surrounding islands in Central Visayas, with Tagbilaran as its capital. With 4,821 square kilometres of land and a 261-kilometre coastline, Bohol is the tenth-largest island in the country. Its most famous attraction is the Chocolate Hills, a sea of brown limestone mounds, alongside river cruises on the Loboc, tarsiers and old stone churches; Panglao to the southwest is known for diving."
+  },
+  "spots": [
+   [
+    "Q977422",
+    "巧克力山"
+   ],
+   [
+    "Q35336485",
+    "洛博克河"
+   ],
+   [
+    "relation/18624659",
+    "巴克拉永教堂"
+   ],
+   [
+    "way/642793151",
+    "比拉尔人造林"
+   ],
+   [
+    "node/4541388889",
+    "眼镜猴观赏点"
+   ],
+   [
+    "Q1330147",
+    "拉惹西卡图纳保护景观区"
+   ]
+  ]
+ },
+ "i7552": {
+  "zh": "波利略岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Polillo_Island"
+  ],
+  "intro": {
+   "zh": "波利略岛位于菲律宾群岛东北部，是波利略群岛中最大、也是得名的岛，隔波利略海峡与吕宋岛相望，构成拉蒙湾的北侧。全岛分属波利略、布尔德奥斯和帕努库兰三个镇，2010 年人口 64,802 人。岛上栖息着易危的布塔安巨蜥（科莫多龙的近亲），还有瀑布与沙洲。",
+   "en": "Polillo is an island in the northeast of the Philippine archipelago, the largest and namesake of the Polillo Islands, separated from Luzon by the Polillo Strait and forming the northern side of Lamon Bay. It is split among the municipalities of Polillo, Burdeos and Panukulan and had 64,802 residents in 2010. The island is home to the Butaan, a vulnerable monitor lizard related to the Komodo dragon, as well as waterfalls and sandbars."
+  },
+  "spots": [
+   [
+    "node/5487331022",
+    "塔穆拉亚瀑布"
+   ],
+   [
+    "node/4840595821",
+    "卢利沙洲"
+   ],
+   [
+    "node/4840595721",
+    "马塔拉斯纳巴托观景点"
+   ],
+   [
+    "Q31473776",
+    "波利略湾"
+   ]
+  ]
+ },
+ "i2653": {
+  "zh": "塔布拉斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Tablas_Island"
+  ],
+  "intro": {
+   "zh": "塔布拉斯岛是朗布隆省最大的岛，名字源自西班牙语，殖民前被称为“奥西甘岛”，初与西方接触时只有 256 人住在小村里。西海岸中部的奥迪翁甘是主要港口，也是全省人口最多的镇；全岛共分九个镇。岛上有古老的石造教堂、灯塔和宁静的海湾。",
+   "en": "Tablas is the largest island of Romblon province, and its name is of Spanish origin; before colonisation it was known as Osigan, home to just 256 people in small villages at the time of Western contact. Odiongan on the west coast is its main port and the province's most populous town, and the island is divided into nine municipalities. Old stone churches, lighthouses and quiet bays await visitors."
+  },
+  "spots": [
+   [
+    "Q30141218",
+    "戈尔达角灯塔"
+   ],
+   [
+    "Q25212566",
+    "圣文森特·费雷尔堂区教堂"
+   ],
+   [
+    "node/4113499692",
+    "卢克湾"
+   ],
+   [
+    "node/9644565732",
+    "卡拉特拉瓦博物馆"
+   ],
+   [
+    "Q5015189",
+    "卡巴汉岛"
+   ]
+  ]
+ },
+ "i806": {
+  "zh": "埃尔弗赖莱岛（德拉姆堡）",
+  "src": [
+   "https://en.wikipedia.org/wiki/Fort_Drum_(Philippines)"
+  ],
+  "intro": {
+   "zh": "埃尔弗赖莱岛位于马尼拉湾口、科雷希多岛以南，整座岛被改建成德拉姆堡——一座外形像战舰的钢筋混凝土海上要塞，绰号“混凝土战舰”，由美国在 1909 年修建。二战时被日军占领，后被美军纵火夺回，从此废弃。如今它是马尼拉湾最奇特的历史遗迹之一。",
+   "en": "El Fraile Island sits at the mouth of Manila Bay, south of Corregidor, and was turned entirely into Fort Drum, a reinforced concrete sea fort shaped like a battleship and nicknamed the \"concrete battleship\", built by the United States in 1909. Captured by Japanese forces in World War II and retaken when US troops set it ablaze, it has been abandoned ever since and remains one of the strangest relics of the bay."
+  },
+  "spots": [
+   [
+    "way/1340668971",
+    "德拉姆堡"
+   ],
+   [
+    "node/12401317563",
+    "埃尔弗赖莱灯塔"
+   ],
+   [
+    "way/307543325",
+    "马歇尔炮台"
+   ],
+   [
+    "way/307543326",
+    "威尔逊炮台"
+   ],
+   [
+    "Q5471375",
+    "休斯堡"
+   ]
+  ]
+ },
+ "i282": {
+  "zh": "帕马利坎岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Pamalican"
+  ],
+  "intro": {
+   "zh": "帕马利坎岛是库约群岛中一座沙质小岛，位于巴拉望与班乃之间的苏禄海，坐落在一片约 7 平方公里的珊瑚礁中央。岛长约 2.5 公里，最宽处只有 500 米。全岛为私人所有，开发成顶级度假村阿曼普洛，只接待住客，是菲律宾最昂贵的私人海岛之一。",
+   "en": "Pamalican is a small sandy island of the Cuyo group in the Sulu Sea, between Palawan and Panay, set in the middle of a coral reef of about 7 square kilometres. The island is about 2.5 kilometres long and only 500 metres wide at its widest. Entirely privately owned, it is home to the exclusive Amanpulo resort, which only receives its own guests, making it one of the country's most expensive island escapes."
+  },
+  "spots": [
+   [
+    "Q4739919",
+    "阿曼普洛度假村"
+   ],
+   [
+    "Q1161710",
+    "马纳莫克岛"
+   ],
+   [
+    "node/6919680114",
+    "马纳莫克灯塔"
+   ],
+   [
+    "Q31831199",
+    "塔亚伊岛"
+   ]
+  ]
+ },
+ "i4489": {
+  "zh": "利马萨瓦岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Limasawa"
+  ],
+  "intro": {
+   "zh": "利马萨瓦岛是南莱特省的一个岛镇，2024 年人口 6,480 人，是全省人口最少的镇。它在菲律宾史上地位特殊，被认定为 1521 年菲律宾第一次天主教弥撒的举行地，岛上建有纪念圣殿和展览馆，每年吸引朝圣者和历史爱好者前来。",
+   "en": "Limasawa is an island municipality of Southern Leyte, with 6,480 people in 2024, the least populated town in the province. It holds a special place in Philippine history as the recognised site of the first Catholic Mass in the country in 1521, commemorated by a hilltop shrine and a gallery that draw pilgrims and history lovers every year."
+  },
+  "spots": [
+   [
+    "Q29018559",
+    "利马萨瓦第一次弥撒圣殿"
+   ],
+   [
+    "node/4528391591",
+    "第一次弥撒展览馆"
+   ],
+   [
+    "node/3687542615",
+    "利马萨瓦北灯塔"
+   ],
+   [
+    "node/4739206513",
+    "马萨瓦巴朗盖木船"
+   ]
+  ],
+  "okNums": [
+   "1521"
+  ],
+  "okNote": "维基全文：1521 年 3 月 31 日第一次弥撒"
+ },
+ "i7073": {
+  "zh": "卢邦岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Lubang_Island"
+  ],
+  "intro": {
+   "zh": "卢邦岛是卢邦群岛七座岛中最大的一座，位于民都洛岛北端西北，距八打雁省卡拉塔甘以西约 40 公里、马尼拉西南约 117 公里，属西民都洛省，分为卢邦和卢克两个镇。群岛远离大陆，生态独特而脆弱，岛上以连绵的丘陵和宁静海岸为主。",
+   "en": "Lubang Island is the largest of the seven islands of the Lubang Group, northwest of the northern tip of Mindoro, about 40 kilometres west of Calatagan, Batangas, and 117 kilometres southwest of Manila. It belongs to Occidental Mindoro and is divided into the municipalities of Lubang and Looc. Isolated from any larger landmass, the group is biologically unique and fragile, with rolling hills and quiet shores."
+  },
+  "spots": [
+   [
+    "Q30496152",
+    "阿拉潘山"
+   ],
+   [
+    "Q30495951",
+    "蓬坦马普蒂山"
+   ],
+   [
+    "Q30495994",
+    "马诺克山"
+   ],
+   [
+    "Q30496071",
+    "凯瓦科山"
+   ]
+  ]
+ },
+ "i2026": {
+  "zh": "阿尼马索拉岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Animasola_Island"
+  ],
+  "intro": {
+   "zh": "阿尼马索拉岛位于马斯巴特省圣帕斯夸尔镇外海，是布里亚斯岛附近的一座火山岩小岛。岛上布满被海浪雕琢的奇形岩石和层层岩壁，搭配清澈海水，近年因“菲律宾的石头岛”式风景在社交媒体走红，常与附近海滩连成一日游线路。",
+   "en": "Animasola Island lies off San Pascual in Masbate province, near Burias Island. The small volcanic island is covered with rock formations and layered cliffs carved by the waves, set in clear water, and has become popular on social media for its unusual stony scenery. It is usually visited on day trips combined with nearby beaches."
+  },
+  "spots": [
+   [
+    "node/11903351369",
+    "阿尼马索拉岛岩石区"
+   ],
+   [
+    "node/8780158371",
+    "圣帕斯夸尔灯塔"
+   ],
+   [
+    "Q31813182",
+    "劳伦特湾"
+   ]
+  ]
+ },
+ "i4398": {
+  "zh": "迪纳加特岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Dinagat_Island"
+  ],
+  "intro": {
+   "zh": "迪纳加特岛位于棉兰老岛东北方，2006 年 12 月之前属北苏里高省，如今是迪纳加特群岛省的主岛，省内几乎所有镇都在这座岛上。岛上保存着大片森林和石灰岩地貌，有蝙蝠保护区、潮汐池和少有人至的海滩，是棉兰老东北角的小众秘境。",
+   "en": "Dinagat Island lies northeast of Mindanao. Until December 2006 it belonged to Surigao del Norte; it is now the main island of Dinagat Islands province, and almost all of the province's municipalities are on it. The island keeps large forests and limestone landscapes, with a bat sanctuary, tidal pools and little-visited beaches, making it an off-the-beaten-track corner of northeastern Mindanao."
+  },
+  "spots": [
+   [
+    "node/6622940799",
+    "图巴洪蝙蝠保护区"
+   ],
+   [
+    "node/6622867188",
+    "希纳比扬海滩"
+   ],
+   [
+    "node/8111938229",
+    "潘加班甘潮汐池"
+   ],
+   [
+    "Q31477318",
+    "雷东多山"
+   ]
+  ],
+  "okNums": [
+   "12"
+  ],
+  "okNote": "12 是月份（2006 年 12 月）"
+ },
+ "i1760": {
+  "zh": "蒂考岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Ticao_Island"
+  ],
+  "intro": {
+   "zh": "蒂考岛陆地面积 334 平方公里，是马斯巴特省三大岛之一，隔蒂考水道与比科尔半岛相望；另两座大岛是马斯巴特岛和布里亚斯岛。岛上分为巴图安、蒙雷亚尔、圣费尔南多和圣哈辛托四个镇。附近海域以蝠鲼和鲸鲨出没闻名，海岸有安静的白沙滩。",
+   "en": "Ticao Island has a land area of 334 square kilometres and is one of the three major islands of Masbate province, separated from the Bicol Peninsula by the Ticao Pass; the other two are Masbate and Burias. It is divided into the municipalities of Batuan, Monreal, San Fernando and San Jacinto. The surrounding waters are known for manta rays and whale sharks, and its coast has quiet white beaches."
+  },
+  "spots": [
+   [
+    "node/11270702469",
+    "比南塔亚南海滩"
+   ],
+   [
+    "Q31516982",
+    "布霍岛"
+   ],
+   [
+    "Q31468373",
+    "皮拉尔湾"
+   ],
+   [
+    "node/5634184222",
+    "星星海滩"
+   ]
+  ]
+ },
+ "i1523": {
+  "zh": "小卡布高岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Antonia_Island"
+  ],
+  "intro": {
+   "zh": "小卡布高岛又名安东尼娅岛，当地叫它“Cabugao Gamay”（小卡布高），与北边的大卡布高岛相对。它是伊洛伊洛省东北部卡尔斯镇辖下的无人小岛，属巨人群岛南部的三座小岛之一。岛上的观景点能俯瞰中央白沙滩和南端的绿色小山，因此被称为“自拍岛”。",
+   "en": "Antonia Island is known locally as Cabugao Gamay, \"Little Cabugao\", in contrast to the bigger Cabugao to its north. It is a small uninhabited island in northeastern Iloilo, one of fourteen islands administered by Carles and one of three minor southern islets of the Islas de Gigantes. Its viewpoint over the central beaches and the green hill at its southern end has earned it the nickname \"selfie island\"."
+  },
+  "spots": [
+   [
+    "node/4944986021",
+    "小卡布高岛观景点"
+   ],
+   [
+    "node/4135139509",
+    "安东尼娅海滩"
+   ],
+   [
+    "Q42309792",
+    "巨人群岛灯塔"
+   ],
+   [
+    "Q656251",
+    "北巨人岛"
+   ],
+   [
+    "node/7136614681",
+    "巴奎坦洞"
+   ]
+  ]
+ },
+ "i892": {
+  "zh": "考哈甘岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Caohagan_Island"
+  ],
+  "intro": {
+   "zh": "考哈甘岛位于宿务海峡，是麦克坦岛外奥兰戈岛群中的一座小岛，归拉普拉普市管辖，2024 年人口 658 人。岛民多靠捕鱼为生，也有人在岛上的海滩度假村工作、摆摊或经营跳岛游。由于远离本岛，家家户户用太阳能板发电，岛上生活简单宁静。",
+   "en": "Caohagan is a small island in the Cebu Strait, one of the Olango Island Group off Mactan, under the jurisdiction of Lapu-Lapu City, with 658 residents in 2024. Many islanders still fish, while others work at the island's beach resort, sell crafts and snacks, or run island-hopping tours. Being far from the mainland, households rely on solar panels for electricity, and life on the island is simple and quiet."
+  },
+  "spots": [
+   [
+    "node/10885499833",
+    "纳卢苏安岛"
+   ],
+   [
+    "node/9865506520",
+    "希卢通甘海洋保护区"
+   ],
+   [
+    "way/643765336",
+    "奥兰戈岛野生动物保护区"
+   ],
+   [
+    "Q31827725",
+    "奥兰戈岛"
+   ]
+  ]
+ },
+ "i6084": {
+  "zh": "巴拉巴克岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Balabac_Island"
+  ],
+  "intro": {
+   "zh": "巴拉巴克岛是巴拉望省最南端的岛，隔巴拉巴克海峡与马来西亚沙巴相距约 50 公里，是菲律宾最西端的无争议岛屿。岛构成巴拉巴克镇的主体，分为 14 个村。岛南端有历史悠久的梅尔维尔角灯塔，周边海域白沙洲与海星滩散布，风景原始。",
+   "en": "Balabac Island is the southernmost island of Palawan province and therefore the westernmost undisputed island of the Philippines, some 50 kilometres north of Sabah across the Balabac Strait. It forms the main part of the municipality of Balabac and is divided into 14 barangays. Its southern tip is crowned by the historic Cape Melville Lighthouse, and the surrounding waters are sprinkled with white sandbars and starfish flats."
+  },
+  "spots": [
+   [
+    "Q5034945",
+    "梅尔维尔角灯塔"
+   ],
+   [
+    "Q19265328",
+    "桑斯岛"
+   ],
+   [
+    "node/11649288670",
+    "海星滩"
+   ],
+   [
+    "Q30472689",
+    "假巴拉巴克峰"
+   ]
+  ]
+ },
+ "i861": {
+  "zh": "卡利科安岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Calicoan_Island"
+  ],
+  "intro": {
+   "zh": "卡利科安岛位于莱特湾以东、萨马岛东南角外，属东萨马省吉万镇。从塔克洛班坐约三小时巴士即可抵达。岛东面向太平洋，浪况优良，被称为“米沙鄢冲浪之都”，岛上还有洞穴、观景点和海洋保护区。",
+   "en": "Calicoan is an island east of Leyte Gulf, off the southeastern point of Samar, and part of the municipality of Guiuan in Eastern Samar. It can be reached from Tacloban by a three-hour bus ride. Facing the Pacific, its reliable waves have earned it the title Surfing Capital of the Visayas, and it also offers caves, viewpoints and a marine sanctuary."
+  },
+  "spots": [
+   [
+    "node/8869075717",
+    "利瑙洞"
+   ],
+   [
+    "node/4948309836",
+    "卡利科安观景点"
+   ],
+   [
+    "node/8869075817",
+    "海洋保护区"
+   ],
+   [
+    "Q25061461",
+    "吉万保护景观与海景区"
+   ]
+  ]
+ }
+}
