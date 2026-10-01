@@ -15,7 +15,7 @@
 //   东沙岛、南海争议岛礁（东经 117° 以西且北纬 8.5° 以北）、马来西亚／印尼的岛（按 geoBoundaries 国界）一律不收。
 // data/islands.json  数组，每项一座岛：
 //   id    字符串 ^[a-z0-9-]{1,40}$，唯一
-//   name  {en: 字符串|null, zh: 字符串|null}；热度前 100 名两个都必须有
+//   name  {en: 字符串|null, zh: 字符串|null}；有详情的岛两个都必须有
 //   pt    [经度, 纬度]，岛内部一点（判卷在这里点击、取色；必须落在 geom(id) 多边形内部）
 //   bbox  [西, 南, 东, 北]
 //   area  km²，完整精度多边形的球面面积（地球半径 6371.0088 km，外环减内洞）
@@ -27,12 +27,23 @@
 //         pois ＝岛多边形内的 OSM 旅游点个数：tourism=hotel|guest_house|resort|hostel|motel|apartment|camp_site|attraction|viewpoint|museum、
 //                leisure=beach_resort、amenity=dive_centre（点，或线／面取中心点）
 //         links＝wd 的 Wikidata 站点链接数（sitelinks），无 wd 为 0
-//   score 0–100，一位小数，严格按 meta.formula 算；rank 名次（1 起）＝按 (score 降序, area 降序, id 升序) 排序的位置
+//         arrivals＝年游客量（人，非负整数）：官方数字或按官方数字分摊的估算（见 data/arrivals.json）；没有可核实官方数字的为 0
+//   arr   arrivals>0 时 {kind:"official"|"estimate", recs:[客流记录 id…]}，否则 null；official 只用于整数来自单条「岛」级记录的岛
+//   index 网络热度指数 0–100（一位小数）；score 0–100，一位小数，严格按 meta.formula 算；rank 名次（1 起）＝按 (score 降序, area 降序, id 升序) 排序的位置
 // data/meta.json  { count: 岛数, viewsPeriod: ["YYYY-MM","YYYY-MM"]（连续 12 个月，结束月 ≥ 2026-06）,
-//                   formula: { w:{views,pois,density,links}（≥0，和为 1）, cap:{views,pois,density,links}（>0）, a0（km²，>0） } }
-//   score＝round1(100 × Σ w_k × min(1, ln(1+x_k)/ln(1+cap_k)))（判卷重算，容差 0.1）；x_views=views，x_pois=pois，x_density=pois/max(area,a0)，x_links=links
-//   同一公式对每座岛一视同仁，不许给单座岛调分
-// data/details.json  数组，热度前 100 名每座一项（多写不扣分）：
+//                   formula: { w:{views,pois,density,links}（≥0，和为 1）, cap:{views,pois,density,links}（>0）, a0（km²，>0）,
+//                              arrivals:{cap, base:50, span:50, scale:0.499} } }
+//   index＝round1(100 × Σ w_k × min(1, ln(1+x_k)/ln(1+cap_k)))；x_views=views，x_pois=pois，x_density=pois/max(area,a0)，x_links=links
+//   score＝arrivals>0 ? round1(base + span × min(1, ln(1+arrivals)/ln(1+cap))) : round1(scale × index)（领导 2026-10-01 改为「按实际客流排名，
+//   没有客流统计的按网络热度垫底」；判卷重算，容差 0.1）。同一公式对每座岛一视同仁，不许给单座岛调分
+// data/arrivals.json  客流记录数组，每条 {id, kind:island|city|province|region, name:{zh,en}, year 2023–2025, value 人数, approx?（原文是约数）,
+//   parts?（原文分项，和＝value）, includes?（官方数已包含的子记录 id）, src（https 原网页）, quote（原网页原句，含 value 或 parts 的数字）, quote2?,
+//   verified?（原网页拦截自动化浏览器时由人工核对的说明；这类记录 ≤3 条）, residual（value − 所含子记录 value 之和，≥0）}
+//   守恒：所有岛 arrivals 之和 ≈ 所有记录 residual 之和（±0.5%）；「岛」级记录的那座岛 arrivals ＝ 该记录 value
+//   判卷全查（signals.arrivals）：非人工核对的记录，用浏览器打开 src，正文要找得到 quote（空白、引号、千分位空格归一后比对），
+//   quote 里要有 value（"2.2 million" 这类约数按百万换算），或正文里有全部 parts；出处网页打不开（含反爬拦截）就判红，不绕过
+//   页面：详情里 data-testid=d-arrivals，有客流时显示人数、年份和每条记录的出处链接；无客流时也要有说明文字
+// data/details.json  数组，≥100 座；年游客 ≥ 5 万的岛必须有（领导 2026-10-01：保留原写好的知名岛＋补客流大岛）：
 //   { id, intro:{zh 60–400 字, en 40–300 词}, spots:[3–6 个 {name:{zh,en}, ref:"node/123"|"way/123"|"relation/123"|"Q123", pt:[经,纬]}],
 //     sources:[https 网址 ≥1], photo:{file:"assets/…"（≤300 KB，宽 ≥480 像素）, commons:"File:…", author, license} }
 //   spot：ref 指向的 OSM 元素／Wikidata 条目名字要和 name.en 对得上、坐标离 spot.pt ≤2 km；spot.pt 离岛的 bbox ≤10 km
@@ -147,7 +158,8 @@ const r1 = x => Math.round(x * 10) / 10;
 function scoreOf(isl, F) {
   const x = { views: isl.sig.views, pois: isl.sig.pois, density: isl.sig.pois / Math.max(isl.area, F.a0), links: isl.sig.links };
   let s = 0; for (const k of ['views', 'pois', 'density', 'links']) s += F.w[k] * Math.min(1, Math.log1p(x[k]) / Math.log1p(F.cap[k]));
-  return r1(100 * s);
+  const index = r1(100 * s), A = F.arrivals, a = isl.sig.arrivals || 0;
+  return a > 0 ? r1(A.base + A.span * Math.min(1, Math.log1p(a) / Math.log1p(A.cap))) : r1(A.scale * index);
 }
 const nums = t => (String(t).replace(/(\d)[,，\s](?=\d{3}\b)/g, '$1').match(/\d+(?:\.\d+)?/g) || []).map(Number);
 function parseArea(t) {
@@ -159,8 +171,9 @@ const sigDigits = t => { const m = String(t).replace(/(\d)[,，\s](?=\d{3}\b)/g,
 // ───── 静态服务器（sab＝反向验证用的破坏）─────
 const MIME = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.mjs': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json; charset=utf-8', '.geojson': 'application/geo+json', '.pbf': 'application/x-protobuf', '.mvt': 'application/vnd.mapbox-vector-tile', '.pmtiles': 'application/octet-stream', '.bin': 'application/octet-stream', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif', '.woff2': 'font/woff2', '.woff': 'font/woff', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.txt': 'text/plain; charset=utf-8', '.wasm': 'application/wasm' };
 function tamper(rel, buf, sab) {
-  if (!/^data\/(islands|details)\.json$/.test(rel) || !(sab.arealie || sab.scorelie || sab.viewslie || sab.spotfake || sab.outsider)) return buf;
+  if (!/^data\/(islands|details|arrivals)\.json$/.test(rel) || !(sab.arealie || sab.scorelie || sab.viewslie || sab.spotfake || sab.outsider || sab.arrivalslie)) return buf;
   const j = JSON.parse(buf.toString('utf8'));
+  if (rel === 'data/arrivals.json' && sab.arrivalslie) { const r = j.find(x => x.id === 'cebu') || j[0]; r.value = Math.round(r.value * 1.2); }
   if (rel === 'data/islands.json') {
     const top = j.slice().sort((a, b) => a.rank - b.rank);
     if (sab.arealie) { const b = j.find(i => /^boracay/i.test(i.name?.en || '')) || top[0]; b.area = +(b.area * 1.05).toFixed(4); }
@@ -235,12 +248,13 @@ let BASE, HOST, D = null;
 async function getBuf(rel) { const r = await fetch(BASE + rel + (BASE.startsWith('http://127') ? '' : '?t=' + Date.now())); if (!r.ok) throw new Error(`${rel} HTTP ${r.status}`); return Buffer.from(await r.arrayBuffer()); }
 async function loadData() {
   const out = {};
-  for (const k of ['islands', 'meta', 'details']) { try { out[k] = JSON.parse((await getBuf(`data/${k}.json`)).toString('utf8')); } catch (e) { out[k] = null; out.err = (out.err || '') + e.message.slice(0, 80) + '；'; } }
+  for (const k of ['islands', 'meta', 'details', 'arrivals']) { try { out[k] = JSON.parse((await getBuf(`data/${k}.json`)).toString('utf8')); } catch (e) { out[k] = null; out.err = (out.err || '') + e.message.slice(0, 80) + '；'; } }
   out.isl = Array.isArray(out.islands) ? out.islands : [];
   out.byId = new Map(out.isl.map(i => [i.id, i]));
   out.top = out.isl.filter(i => Number.isInteger(i.rank)).sort((a, b) => a.rank - b.rank);
   out.top100 = out.top.slice(0, 100);
   out.det = new Map((Array.isArray(out.details) ? out.details : []).map(d => [d.id, d]));
+  out.recs = Array.isArray(out.arrivals) ? out.arrivals : [];
   return out;
 }
 // 维基系接口会 429 限流（2026-09-29 实测 retry-after 32 秒），按服务器要求等
@@ -286,7 +300,7 @@ async function gData() {
   const tot = I.reduce((s, i) => s + (i.area || 0), 0);
   rec('data.total', Math.abs(tot - TOTAL_AREA) / TOTAL_AREA <= 0.01, `面积合计 ${Math.round(tot)} km²（应为 ${TOTAL_AREA} ±1%）`);
   // 公式与名次
-  const F = M.formula, okF = F && F.w && F.cap && F.a0 > 0 && ['views', 'pois', 'density', 'links'].every(k => F.w[k] >= 0 && F.cap[k] > 0) && Math.abs(['views', 'pois', 'density', 'links'].reduce((s, k) => s + F.w[k], 0) - 1) < 1e-6;
+  const F = M.formula, okF = F && F.w && F.cap && F.a0 > 0 && ['views', 'pois', 'density', 'links'].every(k => F.w[k] >= 0 && F.cap[k] > 0) && Math.abs(['views', 'pois', 'density', 'links'].reduce((s, k) => s + F.w[k], 0) - 1) < 1e-6 && F.arrivals && F.arrivals.cap > 0 && F.arrivals.base === 50 && F.arrivals.span === 50 && F.arrivals.scale > 0 && F.arrivals.scale * 100 < 50;
   if (!okF) rec('data.formula', false, 'meta.formula 不合格（w 非负且和为 1、cap>0、a0>0）');
   else {
     const mis = I.filter(i => i.sig && Math.abs(scoreOf(i, F) - i.score) > 0.11);
@@ -298,10 +312,26 @@ async function gData() {
   const vp = M.viewsPeriod; let vpOk = Array.isArray(vp) && vp.length === 2 && /^\d{4}-\d{2}$/.test(vp[0]) && /^\d{4}-\d{2}$/.test(vp[1]);
   if (vpOk) { const [y0, m0] = vp[0].split('-').map(Number), [y1, m1] = vp[1].split('-').map(Number); vpOk = (y1 * 12 + m1) - (y0 * 12 + m0) === 11 && vp[1] >= '2026-06'; }
   rec('data.period', vpOk, `viewsPeriod=${JSON.stringify(vp)}（连续 12 个月，结束 ≥2026-06）`);
-  const noName = D.top100.filter(i => !i.name?.en || !i.name?.zh).map(i => i.id);
-  rec('data.names', D.top100.length === 100 && noName.length === 0, noName.length ? '前 100 名缺中/英文名：' + noName.slice(0, 6).join(',') : `前 ${D.top100.length} 名中英文名齐全`);
+  const need = D.isl.filter(i => (i.sig?.arrivals || 0) >= 50000 || D.det.has(i.id));
+  const noName = need.filter(i => !i.name?.en || !i.name?.zh).map(i => i.id);
+  rec('data.names', need.length >= 100 && noName.length === 0, noName.length ? '有详情/大客流的岛缺中英文名：' + noName.slice(0, 6).join(',') : `${need.length} 座有详情或年游客 ≥5 万的岛中英文名齐全`);
+  // 客流记录
+  { const R = D.recs, ids = new Set(R.map(r => r.id)), bad = [];
+    for (const r of R) {
+      if (!/^[a-z0-9_]+$/.test(r.id || '') || !['island', 'city', 'province', 'region'].includes(r.kind) || !r.name?.zh || !r.name?.en) bad.push(`${r.id}:字段`);
+      if (!(r.year >= 2023 && r.year <= 2025) || !(Number.isInteger(r.value) && r.value > 0) || !/^https:\/\//.test(r.src || '') || !r.quote) bad.push(`${r.id}:年份/数值/出处`);
+      if (r.parts && r.parts.reduce((a, b) => a + b, 0) !== r.value) bad.push(`${r.id}:分项之和≠value`);
+      const inc = (r.includes || []).map(c => R.find(x => x.id === c)); if (inc.some(x => !x)) bad.push(`${r.id}:includes 指向不存在的记录`);
+      const res = r.value - inc.filter(Boolean).reduce((a, x) => a + x.value, 0); if (res < 0 || r.residual !== res) bad.push(`${r.id}:residual 应为 ${res}`);
+      if (r.kind === 'island') { const own = D.isl.filter(i => i.arr && i.arr.recs.includes(r.id)); if (own.length !== 1 || own[0].sig.arrivals !== r.value || own[0].arr.kind !== 'official') bad.push(`${r.id}:岛级记录应整数给一座岛且标 official`); }
+    }
+    if (R.filter(r => r.verified).length > 3) bad.push('人工核对的记录超过 3 条');
+    for (const i of D.isl) { const a = i.sig?.arrivals || 0; if (a > 0 && (!i.arr || !['official', 'estimate'].includes(i.arr.kind) || !i.arr.recs?.length || i.arr.recs.some(x => !ids.has(x)))) bad.push(`${i.id}:arr 字段`); if (a === 0 && i.arr) bad.push(`${i.id}:无客流却有 arr`); if (i.arr?.kind === 'official' && !(i.arr.recs.length === 1 && R.find(r => r.id === i.arr.recs[0])?.kind === 'island')) bad.push(`${i.id}:official 只给岛级记录`); }
+    const sumI = D.isl.reduce((a, i) => a + (i.sig?.arrivals || 0), 0), sumR = R.reduce((a, r) => a + (r.residual || 0), 0);
+    if (!R.length || Math.abs(sumI - sumR) / Math.max(1, sumR) > 0.005) bad.push(`守恒：各岛合计 ${sumI}，记录剩余合计 ${sumR}`);
+    rec('data.arrivals', R.length > 0 && bad.length === 0, bad.length ? bad.slice(0, 5).join('；') : `${R.length} 条客流记录字段齐全，分摊守恒（各岛合计 ${sumI.toLocaleString('en')}）`); }
   // 详情
-  const dbad = [], missing = D.top100.filter(i => !D.det.has(i.id)).map(i => i.id);
+  const dbad = [], missing = D.isl.filter(i => (i.sig?.arrivals || 0) >= 50000 && !D.det.has(i.id)).map(i => i.id);
   for (const d of D.det.values()) {
     const i = D.byId.get(d.id), e = [];
     if (!i) { dbad.push(`${d.id}:没这座岛`); continue; }
@@ -323,7 +353,7 @@ async function gData() {
     }
     if (e.length) dbad.push(`${d.id}:${[...new Set(e)].join('/')}`);
   }
-  rec('data.details', D.top100.length === 100 && missing.length === 0 && dbad.length === 0, (missing.length ? `前 100 名缺详情 ${missing.length} 座（${missing.slice(0, 4).join(',')}）；` : '') + (dbad.length ? dbad.slice(0, 4).join('；') : `详情 ${D.det.size} 座字段合格`));
+  rec('data.details', D.det.size >= 100 && missing.length === 0 && dbad.length === 0, (D.det.size < 100 ? `详情只有 ${D.det.size} 座；` : '') + (missing.length ? `年游客 ≥5 万的岛缺详情 ${missing.length} 座（${missing.slice(0, 4).join(',')}）；` : '') + (dbad.length ? dbad.slice(0, 4).join('；') : `详情 ${D.det.size} 座字段合格`));
 }
 
 // ───── 浏览器通用 ─────
@@ -392,13 +422,14 @@ async function gGeo(browser, sab) {
   }
   rec('geo.geom', pipBad.length === 0, pipBad.length ? pipBad.slice(0, 5).join('；') : '参考岛＋随机 40 座：pt 在岛内，几何面积与 area 相符');
   const fam = REF.filter(r => r[5]).map(r => [r[0], D.byId.get(G.refIds[r[0]])]);
-  const bor = fam[0][1], inTop = fam.filter(([, i]) => i && i.rank <= 60);
-  rec('geo.famous', !!bor && bor.rank <= 5 && inTop.length >= 9, `长滩岛第 ${bor?.rank} 名（应 ≤5）；13 座知名旅游岛进前 60 名的有 ${inTop.length} 座（应 ≥9）：${fam.map(([n, i]) => n + '#' + (i?.rank ?? '?')).join(' ')}`);
+  const bor = fam[0][1], inTop = fam.filter(([, i]) => i && (i.sig?.arrivals || 0) > 0);
+  const firstNo = D.top.findIndex(i => !(i.sig?.arrivals > 0)), lateYes = firstNo < 0 ? [] : D.top.slice(firstNo).filter(i => i.sig?.arrivals > 0);
+  rec('geo.famous', !!bor && bor.sig?.arrivals === 2077977 && bor.arr?.kind === 'official' && lateYes.length === 0 && inTop.length >= 9, `长滩岛年游客 ${bor?.sig?.arrivals}（应＝官方 2,077,977、official）；有客流的岛全部排在无客流的岛之前：${lateYes.length ? '否，如 ' + lateYes[0].id : '是'}；13 座知名旅游岛有客流数据的 ${inTop.length} 座（应 ≥9）：${fam.map(([n, i]) => n + '#' + (i?.rank ?? '?')).join(' ')}`);
   await page.context().close();
 }
 
 // ───── signals 组（联网）─────
-async function gSignals() {
+async function gSignals(browser) {
   const M = D.meta || {}, vp = M.viewsPeriod || ['2025-07', '2026-06'];
   const withWiki = D.isl.filter(i => i.wiki && i.sig?.views > 0);
   const bor = D.isl.find(i => /^boracay$/i.test(i.name?.en || '')) || D.top[0];
@@ -434,6 +465,30 @@ async function gSignals() {
     for (const i of ls) { const n = Object.keys(j.entities?.[i.wd]?.sitelinks || {}).length; if (Math.abs(n - i.sig.links) > Math.max(3, n * 0.1)) lbad.push(`${i.wd}:写 ${i.sig.links} 实 ${n}`); }
   } catch (e) { lbad.push(e.message.slice(0, 80)); }
   rec('signals.links', ls.length > 0 && lbad.length === 0, lbad.length ? lbad.join('；') : `${ls.length} 座 sitelinks 与 Wikidata 吻合`);
+  // 客流：每条记录打开出处网页，原句要在页面里，数字要在原句里（分项在页面里）；人工核对的（verified）跳过
+  const an = t => String(t).replace(/[’‘]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, ' ').trim().toLowerCase();
+  const anums = t => { const s = String(t).replace(/(\d),\s?(?=\d{3}\b)/g, '$1'); const o = (s.match(/\d+(?:\.\d+)?/g) || []).map(Number); for (const m of s.matchAll(/(\d+(?:\.\d+)?)\s*million/gi)) o.push(Math.round(+m[1] * 1e6)); return o; };
+  const abad = [], R = D.recs.filter(r => !r.verified);
+  const ctx = await browser.newContext({ userAgent: BUA, locale: 'en-US' });
+  const pages = {};  // 同一网址只开一次（同站连开会被 403），失败隔 20 秒再试，最多 3 次
+  const pageText = async u => {
+    if (u in pages) return pages[u];
+    let last = '';
+    for (let k = 0; k < 3; k++) {
+      const p = await ctx.newPage();
+      try { const rs = await p.goto(u, { waitUntil: 'domcontentloaded', timeout: 45000 }); await sleep(2500); const t = await p.evaluate(() => document.body.innerText); if (rs && rs.status() < 400 && t.length > 500) { await p.close(); return pages[u] = an(t); } last = `HTTP ${rs?.status()}`; } catch (e) { last = e.message.slice(0, 50); }
+      await p.close(); await sleep(20000);
+    }
+    return pages[u] = new Error(last);
+  };
+  for (const r of R) {
+    const txt = await pageText(r.src);
+    if (txt instanceof Error) { abad.push(`${r.id}:打不开 ${txt.message}`); continue; }
+    if (!txt.includes(an(r.quote))) abad.push(`${r.id}:原句不在出处页`);
+    else if (!(anums(r.quote).includes(r.value) || (r.parts && r.parts.every(v => anums(txt).includes(v))))) abad.push(`${r.id}:原句里没有 ${r.value}`);
+  }
+  await ctx.close();
+  rec('signals.arrivals', R.length > 0 && abad.length === 0, abad.length ? abad.slice(0, 6).join('；') : `${R.length} 条客流记录的原句和数字都在出处网页上（${D.recs.length - R.length} 条人工核对的跳过）`);
 }
 
 // ───── details 组（联网）─────
@@ -647,16 +702,23 @@ async function checkDetail(page, i, lang) {
   const po = nums(await tx('d-pois')); if (!po.includes(i.sig.pois)) bad.push(`${i.id} d-pois≠${i.sig.pois}`);
   const nb = D.top100.filter(t => t.id !== i.id).map(t => [t, hav(i.pt, t.pt)]).sort((a, b) => a[1] - b[1])[0];
   if (nb) { const nt = await tx('d-near'); if (!nt.includes(dispName(nb[0], lang)) || !nums(nt).some(v => Math.abs(v - nb[1]) <= Math.max(1, nb[1] * 0.05))) bad.push(`${i.id} d-near「${nt.slice(0, 30)}」应含 ${dispName(nb[0], lang)} ${nb[1].toFixed(1)} km`); }
+  { const at2 = await tx('d-arrivals'), a = i.sig.arrivals || 0;
+    if (a > 0) {
+      const rs = (i.arr?.recs || []).map(x => D.recs.find(r => r.id === x)).filter(Boolean);
+      const hs = await page.locator(`${tid('detail')} ${tid('d-arrivals')} a`).evaluateAll(es => es.map(e => e.href)).catch(() => []);
+      if (!nums(at2).includes(a) || !rs.every(r => at2.includes(String(r.year)) && hs.includes(r.src))) bad.push(`${i.id} d-arrivals「${at2.slice(0, 30)}」应含 ${a}、年份和出处链接`);
+    } else if (!at2.trim()) bad.push(`${i.id} d-arrivals 空着（无客流也要说明）`); }
   const d = D.det.get(i.id);
-  if (i.rank <= 100) {
-    if (!d) { bad.push(`${i.id} 没有详情数据`); return bad; }
+  if (d) {
     const it = (await tx('d-intro')).replace(/\s+/g, ' '), want = String(d.intro?.[lang] || '').replace(/\s+/g, ' ').slice(0, 20);
     if (!want || !it.includes(want)) bad.push(`${i.id} d-intro 不含介绍开头「${want}」`);
     const spots = await page.locator(`${tid('detail')} ${tid('d-spot')}`).allInnerTexts().catch(() => []);
     if (spots.length !== d.spots.length || !d.spots.every((s, k) => (spots[k] || '').includes(s.name?.[lang]))) bad.push(`${i.id} d-spot ${spots.length} 项与 ${d.spots.length} 个景点对不上`);
     const ph = await page.evaluate(() => { const e = document.querySelector('[data-testid=detail] [data-testid=d-photo]'); const im = e && (e.tagName === 'IMG' ? e : e.querySelector('img')); return im ? [im.complete, im.naturalWidth, im.currentSrc || im.src] : null; });
-    if (!ph || !ph[0] || ph[1] < 400 || !decodeURI(ph[2]).includes(d.photo.file)) bad.push(`${i.id} d-photo 没显示 ${d.photo?.file}`);
-    const cr = await tx('d-credit'); if (!cr.includes(String(d.photo?.author).slice(0, 12)) || !cr.includes(d.photo?.license)) bad.push(`${i.id} d-credit 缺作者或许可`);
+    if (d.photo) {  // 缺照片由 data.details 判红，这里只核“有照片的要显示对”
+      if (!ph || !ph[0] || ph[1] < 400 || !decodeURI(ph[2]).includes(d.photo.file)) bad.push(`${i.id} d-photo 没显示 ${d.photo?.file}`);
+      const cr = await tx('d-credit'); if (!cr.includes(String(d.photo?.author).slice(0, 12)) || !cr.includes(d.photo?.license)) bad.push(`${i.id} d-credit 缺作者或许可`);
+    }
     const hs = await page.locator(`${tid('detail')} ${tid('d-src')} a`).evaluateAll(es => es.map(e => e.href)).catch(() => []);
     if (!d.sources.every(u => hs.includes(u))) bad.push(`${i.id} d-src 缺出处链接`);
   }
@@ -700,7 +762,7 @@ async function runAll(sab = {}, groups = null) {
   fs.mkdirSync(SHOT, { recursive: true });
   D = await loadData();
   if (urlArg) {
-    for (const f of ['islands', 'meta', 'details']) {
+    for (const f of ['islands', 'meta', 'details', 'arrivals']) {
       try { const b = await getBuf(`data/${f}.json`); const l = fs.readFileSync(path.join(ROOT, `data/${f}.json`)); rec('online.' + f, b.equals(l), b.equals(l) ? '线上与本地逐字节相同' : `线上 ${b.length} 字节，本地 ${l.length}`); }
       catch (e) { rec('online.' + f, false, e.message.slice(0, 60)); }
     }
@@ -748,6 +810,7 @@ if (!PROVE) {
     ['scorelie', ['data'], ['data.formula'], '第 4 名分数 +2'],
     ['outsider', ['geo'], ['geo.out'], '收进东沙岛'],
     ['viewslie', ['signals'], ['signals.views'], '长滩岛访问量 ×1.3'],
+    ['arrivalslie', ['data', 'signals'], ['data.arrivals', 'signals.arrivals'], '客流数字篡改'],
     ['spotfake', ['details'], ['details.spots'], '景点名编造'],
     ['photofake', ['details'], ['details.photo'], '照片调包'],
   ];

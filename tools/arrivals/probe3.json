@@ -1,0 +1,15 @@
+[
+{"url":"https://www.sunstar.com.ph/davao/davao-expands-air-links-as-tourism-hits-41m-arrivals","re":"4[.]1|million|[0-9]{3},[0-9]{3}"},
+{"url":"https://www.gmanetwork.com/regionaltv/news/106306/18m-tourists-visit-davao-city-in-2024/story/","re":"1[.]8|[0-9]{3},[0-9]{3}"},
+{"url":"https://tribune.net.ph/2025/01/15/zambo-city-r-9-top-tourist-destination","re":"Zamboanga|Santa Cruz|Sta[.]|[0-9]{3},[0-9]{3}|million"},
+{"url":"https://dotregion10.com/","re":"2,500,000|2[.]5|arrivals"},
+{"url":"https://palawan-news.com/beyond-arrival-counts-and-the-state-of-palawan-tourism/","re":"El Nido|Puerto Princesa|Coron|San Vicente|[0-9]{3},[0-9]{3}"},
+{"url":"https://palawan-news.com/palawan-welcomes-over-2-1-million-tourists-in-2025-posts-growth-from-2025/","re":"El Nido|Puerto Princesa|Coron|2024|[0-9]{3},[0-9]{3}"},
+{"url":"https://www.sunstar.com.ph/tacloban/local-news/new-attractions-boost-eastern-visayas-tourism-industry","re":"million|[0-9]{3},[0-9]{3}|2024"},
+{"url":"https://tribune.net.ph/2025/03/10/cebu-shares-5-m-tourists-in-2024","re":"Cebu|Lapu|Mactan|[0-9]{3},[0-9]{3}|million"},
+{"url":"https://www.philstar.com/the-freeman/cebu-news/2025/03/07/2426651/south-koreans-still-top-foreign-tourists-cebu","re":"Cebu|Lapu|[0-9]{3},[0-9]{3}|million"},
+{"url":"https://tribune.net.ph/2025/03/30/dot-batanes-not-for-diy-travelers","re":"Batanes|[0-9]{2},[0-9]{3}"},
+{"url":"https://www.rappler.com/philippines/mindanao/siargao-island-leads-caraga-holy-week-tourism-resurgence/","re":"Siargao|Caraga|[0-9]{3},[0-9]{3}|million"},
+{"url":"https://www.mindanaotimes.com.ph/over-1-m-visitors/","re":"[0-9]{3},[0-9]{3}|million|Samal|Davao"},
+{"url":"https://bworldonline.com/the-nation/2025/02/27/656179/la-union-tourism-records-over-p1-b-revenue/","re":"[0-9]{3},[0-9]{3}|La Union"}
+]

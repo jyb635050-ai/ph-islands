@@ -14,21 +14,22 @@
   const T = {
     zh: { brand: '岛热', search: '搜索海岛（中英文名）', count: n => `菲律宾 ${n.toLocaleString('en')} 座岛的热度`, unnamed: '无名岛', top: '热度榜 Top 100', topBtn: '热度榜', low: '冷门', high: '热门',
       score: '热度', rank: '热度名次', area: '面积', prov: '所属省', pois: n => `岛上旅游点（酒店、度假村、潜水店、景点）${n} 个`, near: (n, d) => `离它最近的热门岛：${n} · ${d} km`,
-      why: '热度来由（对数加权）', views: '维基访问', poisL: '旅游点', dens: '旅游点密度', links: '维基语种', viewsU: '次/年', linksU: '种',
+      why: '网络热度（对数加权，客流缺失时用于排名）', arrT: '年游客量', arrOff: '官方统计', arrEst: '估算：官方数字按住宿设施分摊', arrNone: '暂无可核实的官方客流统计，本岛按网络热度排在有客流的岛之后', arrSrc: '客流出处', ppl: '人', topSub: '按年游客量排名', views: '维基访问', poisL: '旅游点', dens: '旅游点密度', links: '维基语种', viewsU: '次/年', linksU: '种',
       spots: '热门景点', src: '出处', photo: '照片', sub: (p, id) => `${p} · 菲律宾`, noIntro: '这座岛没有收录介绍——热度前 100 名才有精写内容。',
-      credit: '数据：© OpenStreetMap 贡献者（ODbL）· geoBoundaries · Wikidata · Wikipedia 访问量 · 照片：Wikimedia Commons', home: '全国' },
+      credit: '客流：DOT 各大区及省市旅游办公布数字（见各岛出处）· 数据：© OpenStreetMap 贡献者（ODbL）· geoBoundaries · Wikidata · Wikipedia 访问量 · 照片：Wikimedia Commons', home: '全国' },
     en: { brand: 'PH Islands', search: 'Search islands', count: n => `Heat map of ${n.toLocaleString('en')} Philippine islands`, unnamed: 'Unnamed island', top: 'Top 100 hottest', topBtn: 'Top 100', low: 'Quiet', high: 'Hot',
       score: 'Heat', rank: 'Heat rank', area: 'Area', prov: 'Province', pois: n => `Tourism places on the island (hotels, resorts, dive shops, sights): ${n}`, near: (n, d) => `Nearest hot island: ${n} · ${d} km`,
-      why: 'Why this heat (log-weighted)', views: 'Wiki views', poisL: 'Tourism POIs', dens: 'POI density', links: 'Wiki languages', viewsU: '/yr', linksU: '',
+      why: 'Online buzz (log-weighted; used when no visitor data)', arrT: 'Annual visitors', arrOff: 'official count', arrEst: 'estimate: official figure split by accommodations', arrNone: 'No verifiable official visitor count; ranked by online buzz below islands with visitor data', arrSrc: 'Visitor data source', ppl: '', topSub: 'ranked by annual visitors', views: 'Wiki views', poisL: 'Tourism POIs', dens: 'POI density', links: 'Wiki languages', viewsU: '/yr', linksU: '',
       spots: 'Highlights', src: 'Sources', photo: 'Photo', sub: (p, id) => `${p} · Philippines`, noIntro: 'No write-up for this island — only the top 100 have curated content.',
-      credit: 'Data: © OpenStreetMap contributors (ODbL) · geoBoundaries · Wikidata · Wikipedia pageviews · Photos: Wikimedia Commons', home: 'Country' },
+      credit: 'Visitors: DOT regional & local tourism office figures (see each island) · Data: © OpenStreetMap contributors (ODbL) · geoBoundaries · Wikidata · Wikipedia pageviews · Photos: Wikimedia Commons', home: 'Country' },
   };
   let lang = 'zh';
   const L = () => T[lang];
 
   // ── 数据 ──
   const base = new URL('.', location.href).href;
-  const [isl, meta, tileIdx] = await Promise.all(['data/islands.json', 'data/meta.json', 'data/tiles/index.json'].map(f => fetch(f).then(r => r.json())));
+  const [isl, meta, tileIdx, recs] = await Promise.all(['data/islands.json', 'data/meta.json', 'data/tiles/index.json', 'data/arrivals.json'].map(f => fetch(f).then(r => r.json())));
+  const recById = new Map(recs.map(r => [r.id, r]));
   const byId = new Map(isl.map(i => [i.id, i])), top = isl.slice().sort((a, b) => a.rank - b.rank), top100 = top.slice(0, 100);
   let details = null; const detP = fetch('data/details.json').then(r => r.json()).then(d => { details = new Map(d.map(x => [x.id, x])); return details; });
   const nm = i => lang === 'en' ? (i.name.en || T.en.unnamed) : (i.name.zh || i.name.en || T.zh.unnamed);
@@ -136,6 +137,14 @@
       const f = Math.min(1, Math.log1p(x[k]) / Math.log1p(F.cap[k])); const row = el('div', 'b'); const bar = el('i'); const b = el('b'); b.style.width = (f * 100).toFixed(0) + '%'; bar.append(b); row.append(el('span', '', `${lb} ×${F.w[k]}`), bar, el('span', '', v)); why.append(row);
     }
     $('dPois').textContent = t.pois(i.sig.pois);
+    const ab = $('dArr'); ab.innerHTML = '';
+    if (i.sig.arrivals > 0) {
+      const rs = i.arr.recs.map(id => recById.get(id)), yrs = [...new Set(rs.map(r => r.year))].join('/');
+      ab.append(el('div', 'lbl', `${t.arrT}（${yrs}）`), el('div', 'big', `${i.arr.kind === 'estimate' ? (lang === 'zh' ? '约 ' : '≈ ') : ''}${i.sig.arrivals.toLocaleString('en')} ${t.ppl}`), el('div', 'kind', i.arr.kind === 'official' ? t.arrOff : t.arrEst));
+      const sl = el('div', 'src'); sl.append(t.arrSrc + '：');
+      for (const r of rs) { const a = el('a', '', `${r.name[lang]} ${r.year} ${r.approx ? (lang === 'zh' ? '约' : '~') : ''}${r.value.toLocaleString('en')}`); a.href = r.src; a.target = '_blank'; a.rel = 'noopener'; sl.append(a); }
+      ab.append(sl);
+    } else ab.append(el('div', 'kind', t.arrNone));
     const nb = top100.filter(o => o.id !== id).map(o => [o, hav(i.pt, o.pt)]).sort((a, b) => a[1] - b[1])[0];
     $('dNear').textContent = nb ? t.near(nm(nb[0]), nb[1] < 10 ? nb[1].toFixed(1) : Math.round(nb[1])) : '';
     $('dNear').onclick = nb ? () => { open(nb[0].id); flyTo(nb[0].id); } : null; $('dNear').style.cursor = nb ? 'pointer' : '';
@@ -190,7 +199,7 @@
   // ── 热度榜 ──
   function renderTop() {
     const ol = $('topList'); ol.innerHTML = '';
-    for (const i of top100) { const li = el('li'); li.dataset.testid = 'top-item'; li.dataset.id = i.id; const d = el('span', 'dot'); d.style.background = color(i.score); li.append(el('span', 'n', String(i.rank)), d, el('span', 'nm', nm(i)), el('span', 'sc', i.score.toFixed(1))); li.onclick = () => { open(i.id); flyTo(i.id); if (mobile()) toggleTop(false); }; ol.append(li); }
+    for (const i of top100) { const li = el('li'); li.dataset.testid = 'top-item'; li.dataset.id = i.id; const d = el('span', 'dot'); d.style.background = color(i.score); li.append(el('span', 'n', String(i.rank)), d, el('span', 'nm', nm(i)), el('span', 'sc', i.sig.arrivals > 0 ? fmtN(i.sig.arrivals) : i.score.toFixed(1))); li.onclick = () => { open(i.id); flyTo(i.id); if (mobile()) toggleTop(false); }; ol.append(li); }
   }
   function toggleTop(on) { $('top').hidden = on == null ? !$('top').hidden : !on; $('topBtn').setAttribute('aria-pressed', String(!$('top').hidden)); }
   $('topBtn').onclick = () => toggleTop();
@@ -201,7 +210,7 @@
     const t = L(); document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
     document.title = lang === 'zh' ? '岛热 · 菲律宾海岛热度地图' : 'PH Islands · Philippine island heat map';
     $('brandName').textContent = t.brand; $('q').placeholder = t.search; $('count').textContent = t.count(isl.length);
-    $('topTitle').textContent = t.top; $('topBtnText').textContent = t.topBtn; $('lang').textContent = lang === 'zh' ? 'EN' : '中';
+    $('topTitle').textContent = t.top; $('topSub').textContent = t.topSub; $('topBtnText').textContent = t.topBtn; $('lang').textContent = lang === 'zh' ? 'EN' : '中';
     $('legLow').textContent = t.low; $('legHigh').textContent = t.high; $('credits').textContent = t.credit; $('homeBtn').setAttribute('aria-label', t.home);
     if (map.getLayer('lbl')) map.setLayoutProperty('lbl', 'text-field', ['get', lang === 'zh' ? 'zh' : 'en']);
     renderTop(); renderResults(); if (cur) open(cur);

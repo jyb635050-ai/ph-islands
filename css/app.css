@@ -71,6 +71,14 @@ button{font:inherit;color:inherit}
 .stat .lbl{font-size:11px;color:var(--ink2)}
 .stat>div:last-child{font-size:17px;font-weight:650;font-variant-numeric:tabular-nums}
 .stat.heat>div:last-child{display:flex;align-items:center;gap:6px}
+/* 年游客量 */
+.arr{background:rgba(255,255,255,.55);border-radius:14px;padding:9px 11px;margin-bottom:10px}
+.arr .lbl{font-size:11px;color:var(--ink2)}
+.arr .big{font-size:22px;font-weight:700;font-variant-numeric:tabular-nums;margin:1px 0}
+.arr .kind{font-size:12px;color:var(--ink2)}
+.arr .src{font-size:11px;color:var(--ink2);margin-top:6px}
+.arr .src a{color:inherit;margin-right:8px;white-space:nowrap}
+.topsub{font-size:11px;color:var(--ink2);margin:-4px 8px 8px}
 .why{background:rgba(255,255,255,.42);border-radius:14px;padding:8px 10px;margin-bottom:10px;font-size:12px}
 .why .t{color:var(--ink2);margin-bottom:4px}
 .why .b{display:grid;grid-template-columns:minmax(0,118px) 1fr auto;gap:8px;align-items:center;margin:4px 0}

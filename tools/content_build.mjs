@@ -23,8 +23,9 @@ const hav = (a, b) => { const h = Math.sin((b[1] - a[1]) * rad / 2) ** 2 + Math.
 const bboxDist = (p, b) => hav(p, [Math.min(Math.max(p[0], b[0]), b[2]), Math.min(Math.max(p[1], b[1]), b[3])]);
 
 const isl = J('data/islands.json'), byId = new Map(isl.map(i => [i.id, i]));
-const top100 = isl.slice().sort((a, b) => a.rank - b.rank).slice(0, 100);
+// 精写范围：原热度前 100 名（已写）＋ 年游客 ≥ 5 万的岛
 const C = {}; for (const f of fs.readdirSync(path.join(ROOT, 'tools/content')).filter(f => /^p\d+\.json$/.test(f)).sort()) Object.assign(C, J('tools/content/' + f));
+const top100 = isl.filter(i => C[i.id] || i.sig.arrivals >= 50000).sort((a, b) => a.rank - b.rank);
 const photos = fs.existsSync(path.join(ROOT, 'tools/content/photos.json')) ? J('tools/content/photos.json') : {};
 const raw = J('tools/.cache/content_raw.json');
 const problems = [];

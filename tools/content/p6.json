@@ -1,0 +1,138 @@
+{
+ "i366": {
+  "zh": "萨马尔岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Samal,_Davao_del_Norte"
+  ],
+  "intro": {
+   "zh": "萨马尔岛位于达沃湾，与它南边的小岛塔利库德岛一起组成“萨马尔岛花园市”，属北达沃省，2024 年人口 119,701 人。岛离棉兰老岛上的达沃市只有 2 公里，是大达沃都会区的一部分，也是达沃人最常去的海滩度假地，沿岸度假村和潜水点密布，岛上还有著名的蝙蝠洞保护区。",
+   "en": "Samal Island lies in the Davao Gulf and, together with the smaller Talikud Island to its south, forms the Island Garden City of Samal in Davao del Norte, home to 119,701 people in 2024. Only 2 kilometres from Davao City on mainland Mindanao and part of Metro Davao, it is the city's favourite beach getaway, lined with resorts and dive spots, and home to a famous bat cave sanctuary."
+  },
+  "spots": [
+   [
+    "Q6899368",
+    "蒙福特蝙蝠保护区"
+   ],
+   [
+    "node/1238348706",
+    "日本洞穴屋"
+   ],
+   [
+    "node/4621625891",
+    "萨邦悬崖"
+   ],
+   [
+    "node/5180990022",
+    "卡尼巴德湾"
+   ],
+   [
+    "node/6059404886",
+    "青鸟观景台"
+   ]
+  ],
+  "okNums": [
+   "2024",
+   "119701"
+  ],
+  "okNote": "出自 en.wikipedia Samal,_Davao_del_Norte 导语（2024 census 119,701）"
+ },
+ "i717": {
+  "zh": "卡坦端内斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Catanduanes"
+  ],
+  "intro": {
+   "zh": "卡坦端内斯岛是比科尔大区的岛省，菲律宾第 12 大岛，隔马克达海峡与南甘马粦省相望，首府和人口最多的城镇是维拉克，2024 年人口 261,169 人。全省以主岛为主，外加帕奈岛、帕伦巴内斯群岛等离岛。岛东岸直面太平洋，浪况出名，海岸岬角和洞穴众多；岛上还有菲律宾第二古老的菊石化石点。",
+   "en": "Catanduanes is an island province of the Bicol Region and the 12th-largest island in the Philippines, east of Camarines Sur across the Maqueda Channel. Its capital and most populous town is Virac, and the province had 261,169 people in 2024. Besides the main island it includes Panay, the Palumbanes group and many islets. Its Pacific-facing east coast is known for surf, headlands and caves, and it hosts the second-oldest ammonite fossil site in the country."
+  },
+  "spots": [
+   [
+    "node/4207152125",
+    "比努龙角观景点"
+   ],
+   [
+    "node/4207152123",
+    "巴拉凯角观景点"
+   ],
+   [
+    "node/2454185643",
+    "卢扬洞"
+   ],
+   [
+    "node/2518552216",
+    "卡坦端内斯博物馆"
+   ],
+   [
+    "node/4362441190",
+    "巴塔格白沙滩"
+   ]
+  ],
+  "okNums": [
+   "12",
+   "2024",
+   "261169"
+  ],
+  "okNote": "出自 en.wikipedia Catanduanes 导语（12th-largest island；261,169 as of 2024 census）"
+ },
+ "i2481": {
+  "zh": "吉马拉斯岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Guimaras"
+  ],
+  "intro": {
+   "zh": "吉马拉斯岛是西米沙鄢大区吉马拉斯省的主岛，位于班乃湾、夹在班乃岛和内格罗斯岛之间，西北方就是伊洛伊洛市，整座岛属于“伊洛伊洛—吉马拉斯都会区”。首府是霍丹，最大的市镇是布埃纳维斯塔。它原是伊洛伊洛的分省，1992 年 5 月 22 日独立建省。这里以芒果闻名，海边有灯塔、风电场和许多小岛海湾。",
+   "en": "Guimaras Island is the main island of Guimaras province in Western Visayas, set in the Panay Gulf between Panay and Negros, with Iloilo City just to the northwest; the whole island belongs to Metro Iloilo–Guimaras. Its capital is Jordan and its largest town is Buenavista. Once a sub-province of Iloilo, it became a province on May 22, 1992. It is famous for its mangoes, and its coast has lighthouses, a wind farm and many small island coves."
+  },
+  "spots": [
+   [
+    "node/4578632793",
+    "吉西灯塔"
+   ],
+   [
+    "node/6367439757",
+    "圣洛伦索风电场"
+   ],
+   [
+    "way/308684513",
+    "吉马拉斯博物馆"
+   ],
+   [
+    "Q18378402",
+    "七罪岛"
+   ],
+   [
+    "Q16901100",
+    "塔克隆岛"
+   ]
+  ],
+  "okNums": [
+   "1992",
+   "22"
+  ],
+  "okNote": "出自 en.wikipedia Guimaras 导语（May 22, 1992）"
+ },
+ "i1622": {
+  "zh": "塔利库德岛",
+  "src": [
+   "https://en.wikipedia.org/wiki/Samal,_Davao_del_Norte"
+  ],
+  "intro": {
+   "zh": "塔利库德岛是达沃湾里萨马尔岛南边的一座小岛，与萨马尔岛同属北达沃省萨马尔岛花园市。它离达沃市不远，比萨马尔岛更安静，海岸多是小型度假村和浮潜、潜水点，岛上有一棵上百年的老榕树，适合当天往返或住上一晚。",
+   "en": "Talikud is a small island in the Davao Gulf just south of Samal Island, and together with Samal it forms the Island Garden City of Samal in Davao del Norte. Close to Davao City yet quieter than its bigger neighbour, its shore is dotted with small resorts and snorkelling and dive spots, and an old century balete tree stands on the island, making it a good day trip or overnight escape."
+  },
+  "spots": [
+   [
+    "node/6284153801",
+    "百年老榕树"
+   ],
+   [
+    "Q31827083",
+    "马利帕诺小岛"
+   ],
+   [
+    "node/4621625891",
+    "萨邦悬崖（萨马尔岛）"
+   ]
+  ]
+ }
+}

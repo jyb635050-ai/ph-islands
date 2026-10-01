@@ -2,3 +2,4 @@ tools/cache/
 tools/.cache/
 tools/node_modules/
 shots/
+tools/arrivals/*.out.json

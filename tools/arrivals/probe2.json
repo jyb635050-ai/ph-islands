@@ -1,0 +1,16 @@
+[
+{"url":"https://www.sunstar.com.ph/cebu/central-visayas-logs-75m-tourists-in-2024","re":"Cebu|Bohol|Siquijor|Negros"},
+{"url":"https://www.dailyguardian.com.ph/blog/w-visayas-rakes-in-php74b-in-tourist-receipts-in-2024","re":"Aklan|Iloilo|Bacolod|Negros|Capiz|Antique|Guimaras|million"},
+{"url":"https://mb.com.ph/2025/3/10/western-visayas-earns-p74-b-from-tourism-in-2024","re":"Aklan|Iloilo|Bacolod|Negros|Capiz|Antique|Guimaras"},
+{"url":"https://www.iloilotoday.com/iloilo-city-tops-tourist-arrivals-in-wv/","re":"Aklan|Iloilo|Bacolod|Negros|Capiz|Antique|Guimaras"},
+{"url":"https://www.manilatimes.net/2025/03/27/regions/mimaropa-among-prime-tourist-destinations/2080646","re":"Palawan|Mindoro|Romblon|Marinduque|million|[0-9]{3},[0-9]{3}"},
+{"url":"https://www.bicolmail.net/single-post/bicol-tourism-booms-with-p3-5-b-in-domestic-receipts","re":"Albay|Camarines|Sorsogon|Masbate|Catanduanes|[0-9]{3},[0-9]{3}"},
+{"url":"https://thebaguiochronicle.com/2025/03/30/79-percent-of-2024-cordillera-tourism-in-baguio/","re":"1,983,511|Baguio|[0-9]{3},[0-9]{3}"},
+{"url":"https://streetjournalms.com/cordillera-records-1-9-m-tourists-in-2024/","re":"1,983,511|[0-9]{3},[0-9]{3}"},
+{"url":"https://www.sunstar.com.ph/manila/dot-equitable-tourism-development-factor-in-growth-of-ph-regions","re":"Calabarzon|Davao|Central Visayas|million|[0-9]{3},[0-9]{3}"},
+{"url":"https://zamboangacity.gov.ph/dot-names-zc-as-zampens-top-travel-destination-sta-cruz-isle-as-leading-tourist-spot/","re":"Santa Cruz|Sta[.] Cruz|[0-9]{3},[0-9]{3}"},
+{"url":"https://www.manilatimes.net/2025/03/13/regions/central-visayas-tourist-arrivals-increase-in-2024/2072097","re":"Cebu|Bohol|Siquijor|Negros"},
+{"url":"https://www.sunstar.com.ph/cagayan-de-oro/tourism-in-camiguin-posts-37-growth-in-2024","re":"288,588|Camiguin"},
+{"url":"https://nuevavizcaya.gov.ph/ptco-reports-surge-in-tourist-arrivals-for-2023-and-2024/","re":"2024"},
+{"url":"https://thechronicle.com.ph/pangasinan-tourism-recovers-pre-pandemic-levels-in-2024/","re":"2024|million|[0-9]{3},[0-9]{3}"}
+]

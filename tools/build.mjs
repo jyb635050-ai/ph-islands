@@ -13,6 +13,7 @@ const require = createRequire(path.join(ROOT, 'tools/package.json'));
 const UA = 'PHIslands-build/1.0 (github.com/jyb635050-ai/ph-islands)';
 const PERIOD = ['2025-09', '2026-08'];
 const F = { w: { views: 0.3, pois: 0.1, density: 0.45, links: 0.15 }, cap: { views: 250000, pois: 3000, density: 60, links: 80 }, a0: 1 };
+const FA = { cap: 10000000, base: 50, span: 50, scale: 0.499 }; // 客流档与热度垫底档
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 const R = 6371.0088, rad = Math.PI / 180;
@@ -227,12 +228,59 @@ async function main() {
     i.prov = n;
   }
 
+  // ───── K：官方年客流分摊到岛（tools/arrivals/records.json）─────
+  // 每个住宿设施（酒店/民宿/度假村…）归到包含它的「最具体」统计范围（岛 < 市镇 < 省 < 大区）；
+  // 每条记录的剩余数（官方数 − 它包含的子记录）按该范围内各岛的住宿设施数分摊；「岛」级记录整数直接给该岛。
+  log('K 客流分摊');
+  const REC = readJ(path.join(ROOT, 'tools/arrivals/records.json'));
+  const LV = { island: 0, city: 1, province: 2, region: 3 };
+  const relGeom = readJ(path.join(TMP, 'adm_geom.json')).elements;
+  const relRings = id => { // 把 outer 成员线首尾拼成环
+    const r = relGeom.find(e => e.id === id); const segs = r.members.filter(m => m.type === 'way' && m.role !== 'inner' && m.geometry).map(m => m.geometry.map(g => [g.lon, g.lat]));
+    const rings = []; let pool = segs.slice();
+    while (pool.length) { let ring = pool.shift(); let grown = true; while (grown && (ring[0][0] !== ring[ring.length - 1][0] || ring[0][1] !== ring[ring.length - 1][1])) { grown = false; for (let k = 0; k < pool.length; k++) { const s = pool[k], e = ring[ring.length - 1]; if (s[0][0] === e[0] && s[0][1] === e[1]) { ring = ring.concat(s.slice(1)); } else if (s[s.length - 1][0] === e[0] && s[s.length - 1][1] === e[1]) { ring = ring.concat(s.slice(0, -1).reverse()); } else continue; pool.splice(k, 1); grown = true; break; } } rings.push(ring); }
+    return rings;
+  };
+  const provByName = new Map(provs.map(p => [p.n, p]));
+  for (const r of REC) {
+    if (r.area.island) r.test = p => { const i = islandAt(p); return !!i && i.id === r.area.island; };
+    else if (r.area.osmRel) { const rs = relRings(r.area.osmRel); r.test = p => rs.some(ring => pipRing(p, ring)); }
+    else { const ps = r.area.provinces.map(n => { const q = provByName.get(n); if (!q) throw new Error('省名不对：' + n); return q; }); r.test = p => ps.some(q => p[0] >= q.b[0] && p[0] <= q.b[2] && p[1] >= q.b[1] && p[1] <= q.b[3] && q.ps.some(pl => inRings(p, pl))); }
+  }
+  const ordered = REC.slice().sort((a, b) => LV[a.kind] - LV[b.kind]);
+  const ACC = /^(hotel|guest_house|resort|hostel|motel|apartment|camp_site)$/;
+  const own = new Map(REC.map(r => [r.id, new Map()]));
+  for (const e of pois) {
+    const t = e.tags || {}; if (!(ACC.test(t.tourism || '') || t.leisure === 'beach_resort')) continue;
+    const p = e.center ? [e.center.lon, e.center.lat] : [e.lon, e.lat]; if (p[0] == null) continue;
+    const i = islandAt(p); if (!i) continue;
+    const r = ordered.find(r => r.test(p)); if (!r) continue;
+    const m = own.get(r.id); m.set(i.id, (m.get(i.id) || 0) + 1);
+  }
+  const arr = new Map(); const byIdI = new Map(isl.map(i => [i.id, i]));
+  const add = (id, v, r) => { const o = arr.get(id) || { v: 0, recs: [], official: false }; o.v += v; if (!o.recs.includes(r.id)) o.recs.push(r.id); if (r.kind === 'island') o.official = true; arr.set(id, o); };
+  for (const r of REC) {
+    const residual = r.value - (r.includes || []).reduce((s, c) => s + REC.find(x => x.id === c).value, 0);
+    r.residual = residual;
+    if (residual < 0) { log('K 警告：剩余为负', r.id, residual); continue; }
+    if (r.kind === 'island') { add(r.area.island, residual, r); r.islands = 1; continue; }
+    const m = own.get(r.id), tot = [...m.values()].reduce((s, v) => s + v, 0);
+    r.islands = m.size; r.accommodations = tot;
+    if (!tot) { log('K 警告：范围内没有住宿设施', r.id); continue; }
+    for (const [id, c] of m) add(id, residual * c / tot, r);
+  }
+  for (const i of isl) { const o = arr.get(i.id); i.arrivals = o ? Math.round(o.v) : 0; i.arr = o && i.arrivals > 0 ? { kind: o.official && o.recs.length === 1 ? 'official' : 'estimate', recs: o.recs } : null; }
+  log('K 有客流的岛', isl.filter(i => i.arrivals > 0).length, '合计', isl.reduce((s, i) => s + i.arrivals, 0));
+  fs.writeFileSync(path.join(DATA, 'arrivals.json'), JSON.stringify(REC.map(({ test, ...r }) => r)));
+
   // ───── H：分数、名次、中文名 ─────
+  // 有官方客流（含分摊估算）的岛：50＋50×对数归一（年客流 / 1000 万）；没有的：网络热度指数 × 0.499（垫底，最高 49.9）
   const r1 = x => Math.round(x * 10) / 10;
   for (const i of isl) {
     const x = { views: i.views, pois: i.pois, density: i.pois / Math.max(i.area, F.a0), links: i.links };
     let s = 0; for (const k of ['views', 'pois', 'density', 'links']) s += F.w[k] * Math.min(1, Math.log1p(x[k]) / Math.log1p(F.cap[k]));
-    i.score = r1(100 * s);
+    i.index = r1(100 * s);
+    i.score = i.arrivals > 0 ? r1(FA.base + FA.span * Math.min(1, Math.log1p(i.arrivals) / Math.log1p(FA.cap))) : r1(FA.scale * i.index); // 垫底档用取整后的 index，判卷可复算
   }
   isl.sort((a, b) => b.score - a.score || b.area - a.area || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
   isl.forEach((i, n) => { i.rank = n + 1; });
@@ -274,9 +322,9 @@ async function main() {
   }
 
   // ───── 输出 ─────
-  const out = isl.map(i => ({ id: i.id, name: i.name, pt: i.pt.map(v => +v.toFixed(6)), bbox: i.bbox.map(v => +v.toFixed(6)), area: +i.area.toFixed(7), prov: i.prov, osm: i.osm, wd: i.wd, wiki: i.wiki, sig: { views: i.views, pois: i.pois, links: i.links }, score: i.score, rank: i.rank, cell: i.cell }));
+  const out = isl.map(i => ({ id: i.id, name: i.name, pt: i.pt.map(v => +v.toFixed(6)), bbox: i.bbox.map(v => +v.toFixed(6)), area: +i.area.toFixed(7), prov: i.prov, osm: i.osm, wd: i.wd, wiki: i.wiki, sig: { views: i.views, pois: i.pois, links: i.links, arrivals: i.arrivals }, arr: i.arr, index: i.index, score: i.score, rank: i.rank, cell: i.cell }));
   fs.writeFileSync(path.join(DATA, 'islands.json'), JSON.stringify(out));
-  fs.writeFileSync(path.join(DATA, 'meta.json'), JSON.stringify({ count: out.length, viewsPeriod: PERIOD, formula: F, built: new Date().toISOString().slice(0, 10), sources: ['OpenStreetMap land polygons 2026-09-28 (ODbL)', 'OpenStreetMap place/tourism tags (ODbL)', 'geoBoundaries (CC BY 3.0 IGO)', 'Wikidata (CC0)', 'Wikimedia pageviews'] }));
+  fs.writeFileSync(path.join(DATA, 'meta.json'), JSON.stringify({ count: out.length, viewsPeriod: PERIOD, formula: { ...F, arrivals: FA }, built: new Date().toISOString().slice(0, 10), sources: ['OpenStreetMap land polygons 2026-09-28 (ODbL)', 'OpenStreetMap place/tourism tags (ODbL)', 'geoBoundaries (CC BY 3.0 IGO)', 'Wikidata (CC0)', 'Wikimedia pageviews'] }));
   log('完成', out.length, '座；前 20：', out.slice(0, 20).map(i => `${i.rank}.${i.name.en || '?'}(${i.score})`).join(' '));
 }
 main().catch(e => { console.error(e); process.exit(1); });
