@@ -15,12 +15,12 @@
     zh: { brand: '岛热', search: '搜索海岛（中英文名）', count: n => `菲律宾 ${n.toLocaleString('en')} 座岛的热度`, unnamed: '无名岛', top: '热度榜 Top 100', topBtn: '热度榜', low: '冷门', high: '热门',
       score: '热度', rank: '热度名次', area: '面积', prov: '所属省', pois: n => `岛上旅游点（酒店、度假村、潜水店、景点）${n} 个`, near: (n, d) => `离它最近的热门岛：${n} · ${d} km`,
       why: '网络热度（对数加权，客流缺失时用于排名）', arrT: '年游客量', arrOff: '官方统计', arrEst: '估算：官方数字按住宿设施分摊', arrNone: '暂无可核实的官方客流统计，本岛按网络热度排在有客流的岛之后', arrSrc: '客流出处', ppl: '人', topSub: '按年游客量排名', views: '维基访问', poisL: '旅游点', dens: '旅游点密度', links: '维基语种', viewsU: '次/年', linksU: '种',
-      spots: '热门景点', src: '出处', photo: '照片', sub: (p, id) => `${p} · 菲律宾`, noIntro: '这座岛没有收录介绍——热度前 100 名才有精写内容。',
+      spots: '热门景点', src: '出处', photo: '照片', sub: (p, id) => `${p} · 菲律宾`, noIntro: '这座岛没有收录介绍——只有知名旅游岛和年游客 5 万以上的岛有精写内容。',
       credit: '客流：DOT 各大区及省市旅游办公布数字（见各岛出处）· 数据：© OpenStreetMap 贡献者（ODbL）· geoBoundaries · Wikidata · Wikipedia 访问量 · 照片：Wikimedia Commons', home: '全国' },
     en: { brand: 'PH Islands', search: 'Search islands', count: n => `Heat map of ${n.toLocaleString('en')} Philippine islands`, unnamed: 'Unnamed island', top: 'Top 100 hottest', topBtn: 'Top 100', low: 'Quiet', high: 'Hot',
       score: 'Heat', rank: 'Heat rank', area: 'Area', prov: 'Province', pois: n => `Tourism places on the island (hotels, resorts, dive shops, sights): ${n}`, near: (n, d) => `Nearest hot island: ${n} · ${d} km`,
       why: 'Online buzz (log-weighted; used when no visitor data)', arrT: 'Annual visitors', arrOff: 'official count', arrEst: 'estimate: official figure split by accommodations', arrNone: 'No verifiable official visitor count; ranked by online buzz below islands with visitor data', arrSrc: 'Visitor data source', ppl: '', topSub: 'ranked by annual visitors', views: 'Wiki views', poisL: 'Tourism POIs', dens: 'POI density', links: 'Wiki languages', viewsU: '/yr', linksU: '',
-      spots: 'Highlights', src: 'Sources', photo: 'Photo', sub: (p, id) => `${p} · Philippines`, noIntro: 'No write-up for this island — only the top 100 have curated content.',
+      spots: 'Highlights', src: 'Sources', photo: 'Photo', sub: (p, id) => `${p} · Philippines`, noIntro: 'No write-up for this island — curated content covers well-known destinations and islands with 50,000+ visitors a year.',
       credit: 'Visitors: DOT regional & local tourism office figures (see each island) · Data: © OpenStreetMap contributors (ODbL) · geoBoundaries · Wikidata · Wikipedia pageviews · Photos: Wikimedia Commons', home: 'Country' },
   };
   let lang = 'zh';
@@ -113,10 +113,10 @@
   });
   map.on('mousemove', e => { map.getCanvas().style.cursor = map.queryRenderedFeatures(e.point, { layers: ['fill', 'glow'] }).length ? 'pointer' : ''; });
 
-  // 就绪后空闲时按热度顺序预取前 100 名照片，点开详情时照片立即出现
+  // 就绪后空闲时按热度顺序预取有详情的岛的照片，点开详情时照片立即出现
   async function prefetchPhotos() {
     const m = await detP;
-    for (const i of top100) { const d = m.get(i.id); if (!d || !d.photo) continue; await new Promise(r => { const im = new Image(); im.onload = im.onerror = r; im.src = d.photo.file; }); }
+    for (const i of top) { const d = m.get(i.id); if (!d || !d.photo) continue; await new Promise(r => { const im = new Image(); im.onload = im.onerror = r; im.src = d.photo.file; }); }
   }
   // ── 详情 ──
   let cur = null;
@@ -151,7 +151,7 @@
     const rich = $('rich'), pb = $('photoBox'); rich.innerHTML = ''; pb.innerHTML = '';
     const fill = d => {
       if (cur !== id) return; rich.innerHTML = ''; pb.innerHTML = '';
-      if (!d || i.rank > 100) { if (i.rank <= 100) return; rich.append(el('p', 'src', t.noIntro)); return; }
+      if (!d) { rich.append(el('p', 'src', t.noIntro)); return; }
       if (d.photo) { const img = el('img'); img.dataset.testid = 'd-photo'; img.src = d.photo.file; img.alt = nm(i); img.decoding = 'async'; pb.append(img);
       const cr = el('div', 'credit'); cr.dataset.testid = 'd-credit'; cr.append(`${t.photo}: ${d.photo.author} · ${d.photo.license} · `); const ca = el('a', '', 'Wikimedia Commons'); ca.href = 'https://commons.wikimedia.org/wiki/' + encodeURIComponent(d.photo.commons.replace(/ /g, '_')); ca.target = '_blank'; ca.rel = 'noopener'; cr.append(ca); pb.append(cr); }
       const p = el('p', '', d.intro[lang]); p.dataset.testid = 'd-intro'; rich.append(p);
