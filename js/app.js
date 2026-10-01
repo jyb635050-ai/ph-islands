@@ -84,7 +84,7 @@
       paint: { 'text-color': '#10283d', 'text-halo-color': 'rgba(255,255,255,.95)', 'text-halo-width': 1.6 } });
     applyLang();
     map.fitBounds(PH, { padding: pad(), duration: 0 });
-    map.once('idle', () => { window.__isl.ready = true; route(); });
+    map.once('idle', () => { window.__isl.ready = true; route(); setTimeout(prefetchPhotos, 1200); });
   });
   const settle = () => new Promise(res => { let done = false; const fin = () => { if (!done) { done = true; map.once('idle', res); setTimeout(res, 4000); } }; map.once('moveend', fin); setTimeout(fin, 2500); });
   const flyTo = (id, animate = true) => { const i = byId.get(id); const p = settle(); map.fitBounds([[i.bbox[0], i.bbox[1]], [i.bbox[2], i.bbox[3]]], { padding: pad(), maxZoom: 17, duration: animate ? 900 : 0, essential: true }); return p; };
@@ -112,6 +112,11 @@
   });
   map.on('mousemove', e => { map.getCanvas().style.cursor = map.queryRenderedFeatures(e.point, { layers: ['fill', 'glow'] }).length ? 'pointer' : ''; });
 
+  // 就绪后空闲时按热度顺序预取前 100 名照片，点开详情时照片立即出现
+  async function prefetchPhotos() {
+    const m = await detP;
+    for (const i of top100) { const d = m.get(i.id); if (!d || !d.photo) continue; await new Promise(r => { const im = new Image(); im.onload = im.onerror = r; im.src = d.photo.file; }); }
+  }
   // ── 详情 ──
   let cur = null;
   function stat(lbl, val) { return [lbl, val]; }
