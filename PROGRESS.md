@@ -17,9 +17,10 @@
 - [x] 任务 2 内容：tools/content/p1–p5.json（人工写）→ `node tools/content_build.mjs` 合成 data/details.json
   - 景点只写编号＋中文名，英文名与坐标从 OSM/Wikidata 原始记录回填；自检同判卷标准＋“介绍里的数字必须在维基原文出现”
   - 434 个景点全部对上；5 座小岛真实景点不足 3 个 → BLOCKED.md
-  - [ ] 照片：tools/photos_fetch.mjs sheets → 人工看联络表 → photo_pick.json → pick
-- [ ] 任务 3 网站（index.html + css/app.css + js/app.js 已可用，待全量判卷）
-- [ ] 任务 4 上线
+  - [x] 照片：sheets → 逐张目检 10 张联络表＋重搜表 → photo_pick.json → pick；86 座有图，14 座错图宁缺（BLOCKED.md）
+- [x] 任务 3 网站：本地全量 42/43，唯一红项 data.details＝5 座景点不足＋14 座缺图（待裁决）
+- [x] 任务 4 上线：仓库 jyb635050-ai/ph-islands，Pages main 根目录；`--url` 31/31；`--prove` 17/17 抓到、退出码 1；判卷指纹未变
+  - 坑：线上点开详情时照片还在下载 → 就绪后空闲按热度预取前 100 名照片（98fa35a）
 
 ## 建议偏离记录
 - 首屏 6 MB 的建议：用矢量瓦片而不是分级 GeoJSON——MapLibre 自带按需加载，首屏实测 3.48 MB
